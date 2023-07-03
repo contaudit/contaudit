@@ -1,0 +1,13 @@
+package br.ufrgs.inf.ppgc.contaudit.checker.wrapper;
+
+public class Wrapper {
+    private String hash;
+
+    public String getHash() {
+        return this.hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+}

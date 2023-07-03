@@ -1,0 +1,4 @@
+.gradle
+app/.gradle
+app/bin/
+gradle

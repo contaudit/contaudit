@@ -1,0 +1,4 @@
+#! /bin/bash
+echo 'Initializing the workflow...'
+sh $1
+echo 'Finished!'

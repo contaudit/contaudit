@@ -1,0 +1,24 @@
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Initializing ContAudIT Checker...
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Current directory: /home/kali/Code/ufrgs-poc
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - ---------------------------
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Menu:
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 0 - Exit
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 1 - Save Environment State
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 2 - Validate Environment State by last environment hash stored
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 3 - Validate Environment State by applying environment diffs since the last saved state
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - ---------------------------
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Choose an option:
+1
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.environment.EnvironmentService - Analyzing current environment state...
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.environment.EnvironmentService - Saving current environment state...
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - ---------------------------
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Menu:
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 0 - Exit
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 1 - Save Environment State
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 2 - Validate Environment State by last environment hash stored
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - 3 - Validate Environment State by applying environment diffs since the last saved state
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - ---------------------------
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Choose an option:
+0
+[main] INFO br.ufrgs.inf.ppgc.contaudit.checker.Startup - Finishing ContAudIT Checker...

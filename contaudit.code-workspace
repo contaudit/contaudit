@@ -1,0 +1,23 @@
+{
+	"folders": [		
+		{
+			"path": "contaudit-chaincode"
+		},
+		{
+			"path": "contaudit-admin"
+		},
+		{
+			"path": "contaudit-wrapper"
+		},
+		{
+			"path": "contaudit-samples"
+		},
+		{
+			"path": "contaudit-checker"
+		},
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
