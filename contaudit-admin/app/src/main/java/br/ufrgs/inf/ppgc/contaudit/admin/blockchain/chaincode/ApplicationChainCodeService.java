@@ -10,7 +10,7 @@ import br.ufrgs.inf.ppgc.contaudit.admin.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.admin.blockchain.BlockchainService;
 
 public class ApplicationChainCodeService {
-    private static final String CHANNEL_NAME = "mychannel";
+    private static final String CHANNEL_NAME = "c1";
     private static final String CHAINCHODE_NAME = "application-chaincode";
 
     public List<Application> getApplications() {

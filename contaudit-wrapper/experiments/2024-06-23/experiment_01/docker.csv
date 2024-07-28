@@ -1,0 +1,12 @@
+Host,CPU_Min,CPU_Max,Memory_Min,Memory_Max
+p2,1.57,5.31,,
+p1,1.69,6.23,,
+dev-p1-artifact,0.1,0.26,,
+dev-p1-log,0.09,3.36,,
+dev-p2-artifact,0.12,1.91,,
+dev-p1-application,0.1,0.28,,
+dev-p1-wrapper,0.09,0.22,,
+dev-p2-wrapper,0.09,1.49,,
+dev-p2-application,0.11,1.87,,
+dev-p2-log,0.09,2.91,,
+ca2,0.0,0.0,,

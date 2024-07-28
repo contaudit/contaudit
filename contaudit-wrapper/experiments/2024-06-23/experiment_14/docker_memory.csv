@@ -1,0 +1,12 @@
+host,min,max
+dev-p2-wrapper,284.37,291.19
+dev-p2-log,269.9,274.62
+dev-p1-log,264.98,269.8
+dev-p2-application,263.82,268.75
+dev-p2-artifact,262.46,268.12
+dev-p1-application,183.71,183.71
+dev-p1-artifact,165.88,165.88
+dev-p1-wrapper,164.84,164.84
+p2,103.76,104.08
+p1,95.2,95.49
+ca2,33.31,33.31

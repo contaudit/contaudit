@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.ApplicationService;
@@ -21,7 +22,7 @@ import br.ufrgs.inf.ppgc.contaudit.wrapper.wrapper.Wrapper;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.wrapper.WrapperService;
 
 public class Command {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(Command.class);
     private String commandLine;
     private Map<String, Object> context;
 
@@ -66,7 +67,8 @@ public class Command {
         for (Artifact artifact : artifacts) {
             boolean artifactIsValid = new ArtifactChainCodeService().validateArtifact(artifact);
             if (!artifactIsValid) {
-                this.logger.info(String.format("Artifact %s not allowed. Command won't be executed.", artifact.getName()));
+                String logString = String.format("Artifact %s not allowed. Command won't be executed.", artifact.getName());
+                this.logger.info(logString);
                 return false;
             }
         }
@@ -91,7 +93,9 @@ public class Command {
         Process process = builder.start();
         String commandOutput = Utils.transformInputStreamToString(process.getInputStream(), false);
         process.waitFor();
-        this.logger.info(String.format("Command output: %s", commandOutput));
+        
+        String logString = String.format("Command output: %n%s", commandOutput);
+        this.logger.info(logString);
 
         this.context.put("commandOutput", commandOutput);
     }

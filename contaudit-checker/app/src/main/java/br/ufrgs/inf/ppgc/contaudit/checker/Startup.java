@@ -13,14 +13,24 @@ import br.ufrgs.inf.ppgc.contaudit.checker.environment.EnvironmentService;
 public class Startup {
     private static Logger logger = LoggerFactory.getLogger(Startup.class);
  
-    public static void main(String[] args) throws URISyntaxException, InterruptedException, IOException {
-        logger.info("Initializing ContAudIT Checker...");
-        logger.info(String.format("Current directory: %s", Utils.currentDirectory()));
-        int resultCode = 1;
-        while (resultCode == 1) {
-            resultCode = showMenu();
+    public static void main(String[] args) {
+        try {
+            logger.info("Initializing ContAudIT Checker...");
+            String logString = String.format("Current directory: %s", Utils.currentDirectory());
+            logger.info(logString);
+            int resultCode = 1;
+            while (resultCode == 1) {
+                resultCode = showMenu();
+            }
+        } catch (InterruptedException ex) {
+            logger.error(ex.getMessage());
+            Thread.currentThread().interrupt();
+        } catch (Exception ex) {
+            logger.error(ex.getMessage());
         }
-        logger.info("Finishing ContAudIT Checker...");
+        finally {
+            logger.info("Finishing ContAudIT Checker...");
+        }
     }
 
     private static int showMenu() throws InterruptedException, IOException, URISyntaxException {

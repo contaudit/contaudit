@@ -1,0 +1,30 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern> -->
+            <pattern>%d{ISO8601} %-4p - %X{prefix} - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator>
+            <key>prefix</key>
+            <defaultValue>unknown</defaultValue>
+        </discriminator>
+        <sift>
+            <appender name="FILE-${userid}" class="ch.qos.logback.core.FileAppender">
+                <file>contaudit-wrapper-${prefix}.log</file>
+                <append>true</append>
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                    <!-- <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern> -->
+                    <pattern>%d{ISO8601} %-4p - %X{prefix} - %m%n</pattern>
+                </layout>
+            </appender>
+        </sift>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="SIFT" />
+    </root>
+</configuration>

@@ -20,7 +20,7 @@ public class LogChainCodeService {
     }
 
     public void insertLog(Log log){
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "log-chaincode";
         String transactionName = "insert";
 
@@ -28,7 +28,7 @@ public class LogChainCodeService {
     }
 
     public List<Log> queryLogsByDateRange(String startDate, String endDate) {
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "log-chaincode";
         String transactionName = "queryByRange";
 

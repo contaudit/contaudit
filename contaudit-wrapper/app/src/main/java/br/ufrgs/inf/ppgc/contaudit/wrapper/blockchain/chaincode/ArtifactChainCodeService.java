@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.artifact.Artifact;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.BlockchainService;
 
 public class ArtifactChainCodeService {
     private BlockchainService blockchain;
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(ArtifactChainCodeService.class);
     private boolean isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("jdwp") >= 0;
 
     public ArtifactChainCodeService() throws IOException, URISyntaxException{
@@ -21,7 +21,7 @@ public class ArtifactChainCodeService {
     }
 
     public void insertArtifact(Artifact artifact) {
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "artifact-chaincode";
         String transactionName = "insert";
 
@@ -50,7 +50,7 @@ public class ArtifactChainCodeService {
 
     private boolean validateArtifactHash(Artifact artifact){
         logger.info("Validating Artifact...");
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "artifact-chaincode";
         String transactionName = "validateArtifact";
 

@@ -20,11 +20,11 @@ import org.hyperledger.fabric.gateway.Wallet;
 import org.hyperledger.fabric.gateway.Wallets;
 
 import org.slf4j.Logger;
-
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
+import org.slf4j.LoggerFactory;
 
 public class BlockchainService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(BlockchainService.class);
+    private boolean isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("jdwp") >= 0;
     private String walletDir;
     private String networkConfigFileDir;
     private String identityName;
@@ -71,7 +71,8 @@ public class BlockchainService {
                 response = transaction.evaluate(args);
             
             String result = new String(response, StandardCharsets.UTF_8);
-            logger.info(String.format("Response %s", result));
+            String logStr = String.format("Response %s", result);
+            logger.info(logStr);
             return result;
         } catch (ContractException | TimeoutException | InterruptedException e) {
             e.printStackTrace();
@@ -107,14 +108,18 @@ public class BlockchainService {
     private void initConfigProperties() throws IOException, URISyntaxException {
         String currentDirectory = new File(BlockchainService.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
         String systemFileSeparator = System.getProperty("file.separator");
+        String configFilePath = currentDirectory + systemFileSeparator;
+        if (this.isDebug)
+            configFilePath = configFilePath + ".." + systemFileSeparator + ".." + systemFileSeparator + ".." + systemFileSeparator + "config.properties";
+        else
+            configFilePath = configFilePath + "config.properties";
 
-        Properties prop = new Properties();
-        try (InputStream input = new FileInputStream(currentDirectory + systemFileSeparator + "config.properties")) {
+        try (InputStream input = new FileInputStream(configFilePath)) {
+            Properties prop = new Properties();
             prop.load(input);
+            this.walletDir = prop.getProperty("WALLET_DIRECTORY");
+            this.networkConfigFileDir = prop.getProperty("NETWORK_CONFIG_FILE_DIRECTORY");
+            this.identityName = prop.getProperty("IDENTITY_NAME");
         }
-
-        this.walletDir = prop.getProperty("WALLET_DIRECTORY");
-        this.networkConfigFileDir = prop.getProperty("NETWORK_CONFIG_FILE_DIRECTORY");
-        this.identityName = prop.getProperty("IDENTITY_NAME");
     }
 }

@@ -12,15 +12,15 @@ import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
-import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.Startup;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.security.HashService;
 
 public class WrapperService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(WrapperService.class);
 
     public Wrapper loadData() throws IOException, URISyntaxException {
         Wrapper wrapper = new Wrapper();
@@ -34,7 +34,8 @@ public class WrapperService {
         String wrapperHash = "";
         if (tarFile != null) {
             wrapperHash = new HashService().generateSHA3256Hash(tarFile.toPath());
-            logger.info(String.format("Wrapper hash: %s", wrapperHash));
+            String logString = String.format("Wrapper hash: %s", wrapperHash);
+            logger.info(logString);
             boolean deletionResult = Files.deleteIfExists(tarFile.toPath());
             if (!deletionResult)
                 logger.warn("Wrapper compressed file deletion failed...");
@@ -65,11 +66,10 @@ public class WrapperService {
 
         if (file.isFile()) {
             FileInputStream fis = new FileInputStream(file);
-            BufferedInputStream bis = new BufferedInputStream(fis);
-
-            IOUtils.copy(bis, tarArchive);
-            tarArchive.closeArchiveEntry();
-            bis.close();
+            try (BufferedInputStream bis = new BufferedInputStream(fis)) {
+                IOUtils.copy(bis, tarArchive);
+                tarArchive.closeArchiveEntry();
+            }
         } else if (file.isDirectory()) {
             tarArchive.closeArchiveEntry();
             for (File f : file.listFiles()) {

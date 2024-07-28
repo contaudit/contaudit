@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 plugins {
-    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'com.github.johnrengelman.shadow' version '4.0.0'
     id 'java'
 }
 
@@ -35,8 +35,8 @@ shadowJar {
     baseName = 'chaincode'
     version = null
     classifier = null
-
+    
     manifest {
-        attributes 'Main-Class': 'org.hyperledger.fabric.example.ArtifactChaincode'
+        attributes 'Main-Class': 'br.ufrgs.inf.ppgc.contaudit.ArtifactChaincode'
     }
 }

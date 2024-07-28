@@ -41,11 +41,13 @@ public class EnvironmentService {
         if (log == null)
             return;
         String lastLogSavedPostStateHash = log.getEnvironmentPostStateHash();
-        this.logger.info(String.format("Simulated state hash: %s", lastLogSavedPostStateHash));
+        String logString = String.format("Last log post-state hash: %s", lastLogSavedPostStateHash);
+        this.logger.info(logString);
 
         // Get the current state hash
         String currentStateHash = this.getCurrentStateHash(this.getCurrentState());
-        this.logger.info(String.format("Current state hash: %s", currentStateHash));
+        String logString2 = String.format("Current state hash: %s", currentStateHash);
+        this.logger.info(logString2);
 
         // Compare hashes
         this.logger.info("Comparing current state hash and post-state hash in last log saved...");
@@ -72,9 +74,11 @@ public class EnvironmentService {
 
         // Calculates hashes from current temp state and simulated state
         String simulatedStateHash = this.getSimulatedStateHash(lastSavedStateDate);
-        this.logger.info(String.format("Simulated state hash: %s", simulatedStateHash));
+        String logString = String.format("Simulated state hash: %s", simulatedStateHash);
+        this.logger.info(logString);
         String currentTempStateHash = this.getCurrentTempStateHash(lastSavedStateDate);
-        this.logger.info(String.format("Current temp state hash: %s", currentTempStateHash));
+        String logString2 = String.format("Current temp state hash: %s", currentTempStateHash);
+        this.logger.info(logString2);
 
         // Clean temporary state files
         this.clearTempStateFiles();
@@ -94,7 +98,14 @@ public class EnvironmentService {
 
     private String getCurrentState() throws IOException, InterruptedException {
         this.logger.info("Analyzing current environment state...");
+        // Define here the commands to collect environment state
+        
+        // List packages on operation system
         String command = "dpkg -l | awk '{print $2, $3}'";
+
+        // List files modified since specific date
+        //String command = "find / -newermt '2024-06-23T00:00:00' ! -newermt $(date --iso-8601=ns) -printf '%CY-%Cm-%CdT%CH:%CM:%CS %p\n'";
+        
         return this.runCommand(command);
     }
 
@@ -116,7 +127,7 @@ public class EnvironmentService {
         return files[0].getName().substring(0, 23);
     }
 
-    private List<String> readEnvironmentDiffsForSimulation(List<Log> logs) throws IOException, InterruptedException {
+    private List<String> readEnvironmentDiffsForSimulation(List<Log> logs) throws IOException {
         this.logger.info("Loading environment diffs since last saved state...");
         List<String> logsIds = new ArrayList<>();
         for (Log log : logs) {

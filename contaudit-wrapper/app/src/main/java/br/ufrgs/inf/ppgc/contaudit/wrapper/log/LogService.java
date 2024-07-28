@@ -5,14 +5,14 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.artifact.Artifact;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.chaincode.LogChainCodeService;
 
 public class LogService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(LogService.class);
 
     public void saveToBlockchain(String commandLine, Application application, List<Artifact> artifacts, String environmentPreStateHash, String output, String environmentPostStateHash, String environmentDiff) throws IOException, URISyntaxException{
         logger.info("Sending to blockchain...");

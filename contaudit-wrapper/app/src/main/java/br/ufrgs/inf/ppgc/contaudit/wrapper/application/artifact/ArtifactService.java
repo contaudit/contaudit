@@ -11,13 +11,13 @@ import java.util.StringTokenizer;
 import java.util.UUID;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.security.HashService;
 
 public class ArtifactService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(ArtifactService.class);
 
     public List<Artifact> loadData(Application application, String command) throws IOException {
         List<Artifact> artifacts = new ArrayList<>();
@@ -36,7 +36,8 @@ public class ArtifactService {
                 artifact.setName(filePath.getFileName().toString());
                 artifact.setFullPath(filePath.toRealPath().toString());
                 artifact.setHash(new HashService().generateSHA3256Hash(filePath));
-                logger.info(String.format("Artifact %s hash: %s", artifact.getName(), artifact.getHash()));
+                String logString = String.format("Artifact %s hash: %s", artifact.getName(), artifact.getHash());
+                logger.info(logString);
 
                 try (Scanner scan = new Scanner(file).useDelimiter("\\Z")) {
                     artifact.setContent(scan.next());

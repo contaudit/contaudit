@@ -1,0 +1,584 @@
+Second 1:
+CPU
+
+p2: 5.61%
+p1: 4.4% 
+dev-p2-application: 0.28% 
+dev-p2-wrapper: 0.24% 
+dev-p1-application: 0.23% 
+dev-p2-log: 0.22% 
+dev-p1-artifact: 0.19%
+dev-p1-wrapper: 0.19%
+dev-p2-artifact: 0.19%
+dev-p1-log: 0.17% 
+ca2: 0% 
+
+Second 2:
+CPU
+
+p2: 5.61%
+p1: 4.73%
+dev-p2-application: 0.28%
+dev-p2-wrapper: 0.26%
+dev-p1-application: 0.22%
+dev-p2-artifact: 0.22%
+dev-p1-artifact: 0.2%
+dev-p1-log: 0.19%
+dev-p1-wrapper: 0.19%
+dev-p2-log: 0.18%
+ca2: 0%
+
+Second 3:
+CPU
+
+p2: 5.35%
+p1: 4.73%
+dev-p2-application: 0.28%
+dev-p2-wrapper: 0.26%
+dev-p1-application: 0.22%
+dev-p2-artifact: 0.22%
+dev-p1-artifact: 0.2%
+dev-p1-log: 0.19%
+dev-p1-wrapper: 0.19%
+dev-p2-log: 0.18%
+ca2: 0%
+
+Second 4:
+CPU
+
+p1: 5.54%
+p2: 4.37%
+dev-p2-wrapper: 0.29%
+dev-p2-application: 0.26%
+dev-p1-application: 0.24%
+dev-p2-log: 0.2%
+dev-p1-log:: 0.19%
+dev-p1-wrapper: 0.19%
+dev-p2-artifact: 0.18%
+dev-p1-artifact: 0.16%
+ca2: 0%
+
+Second 5:
+CPU
+
+p2: 5.46%
+p1: 3.45%
+dev-p2-wrapper: 0.26%
+dev-p2-application: 0.25%
+dev-p1-application: 0.2%
+dev-p1-artifact: 0.19%
+dev-p2-artifact: 0.19%
+dev-p1-log: 0.18%
+dev-p1-wrapper: 0.18%
+dev-p2-log: 0.18%
+ca2: 0%
+
+Second 6:
+CPU
+
+p1: 4.18%
+p2: 3.89%
+dev-p2-wrapper: 0.26%
+dev-p2-application: 0.24%
+dev-p1-application: 0.23%
+dev-p1-artifact: 0.2%
+dev-p1-wrapper: 0.2%
+dev-p2-artifact: 0.19%
+dev-p2-log: 0.19%
+dev-p1-log: 0.18%
+ca2: 0%
+
+Second 7:
+CPU
+
+p1: 5.27%
+p2: 4.58%
+dev-p2-wrapper: 0.25%
+dev-p1-application: 0.24%
+dev-p1-wrapper: 0.23%
+dev-p2-log: 0.23%
+dev-p2-application: 0.21%
+dev-p2-artifact: 0.2%
+dev-p1-log: 0.18%
+dev-p1-artifact: 0.17%
+ca2: 0%
+
+Second 9:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 10:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 11:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 12:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 13:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 14:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 85:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.03MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB 
+dev-p1-artifact: 185.39MB 
+dev-p1-application: 183.92MB
+p2: 103.82MB
+p1: 97.17MB
+ca2: 33.33MB
+
+Second 88:
+CPU
+
+p1: 8.28%
+p2: 7.37%
+dev-p1-wrapper: 1.03%
+dev-p2-wrapper: 0.34%
+dev-p1-application: 0.16%
+dev-p2-application: 0.16%
+dev-p2-log: 0.16%
+dev-p1-log: 0.14%
+dev-p2-artifact: 0.14%
+dev-p1-artifact: 0.13%
+ca2 0%
+
+Second 89:
+CPU
+
+p2: 6.58%
+p1: 2.68%
+dev-p1-application: 0.16%
+dev-p2-log: 0.16%
+dev-p1-artifact: 0.15%
+dev-p1-log: 0.15%
+dev-p2-application: 0.15%
+dev-p2-wrapper: 0.15%
+dev-p2-artifact: 0.13%
+dev-p1-wrapper: 0.12%
+ca2: 0%
+
+Second 90:
+CPU
+
+p2: 8.49%
+dev-p2-wrapper: 4.03%
+p1: 2.67%
+dev-p1-artifact: 0.32%
+dev-p2-application: 0.24%
+dev-p2-artifact: 0.22%
+dev-p2-log: 0.16%
+dev-p1-application: 0.15%
+dev-p1-wrapper: 0.14%
+dev-p1-log: 0.12%
+ca2: 0%
+
+Second 91:
+CPU
+
+p2: 8.49%
+dev-p2-wrapper: 4.03%
+p1: 2.25%
+dev-p1-artifact: 0.32%
+dev-p2-application: 0.24%
+dev-p1-application: 0.15%
+dev-p2-log: 0.15%
+dev-p1-wrapper: 0.14%
+dev-p2-artifact: 0.14%
+dev-p1-log: 0.12%
+ca2: 0%
+
+Second 92:
+CPU
+
+dev-p2-application: 7.85%
+p1: 7.49%
+p2: 6.99%
+dev-p2-wrapper: 3.99%
+dev-p1-artifact: 1.78%
+dev-p1-wrapper: 0.32%
+dev-p2-artifact: 0.2%
+dev-p1-log: 0.16%
+dev-p1-application: 0.15%
+dev-p2-log: 0.11%
+ca2: 0%
+
+Second 93:
+CPU
+
+p1: 8.75%
+p2: 8.42%
+dev-p2-wrapper: 2.77%
+dev-p2-application: 2.39%
+dev-p1-artifact: 0.18%
+dev-p1-application: 0.15%
+dev-p1-wrapper: 0.14%
+dev-p2-log: 0.14%
+dev-p1-log: 0.13%
+dev-p2-artifact: 0.13%
+ca2: 0%
+
+Second 94:
+CPU
+
+p2: 10.52%
+p1: 10.17%
+dev-p2-wrapper: 2.57%
+dev-p2-application: 0.19%
+dev-p1-application: 0.14%
+dev-p2-artifact: 0.13%
+dev-p2-log: 0.13%
+dev-p1-log: 0.12%
+dev-p1-wrapper: 0.11%
+dev-p1-artifact: 0.1%
+ca2: 0%
+
+Second 95:
+CPU
+
+p2: 12.33%
+dev-p2-application: 6.58%
+p1: 4.97%
+dev-p2-artifact: 1.93%
+dev-p2-wrapper: 1.61%
+dev-p2-log: 0.24%
+dev-p1-wrapper: 0.17%
+dev-p1-application: 0.13%
+dev-p1-artifact: 0.12%
+dev-p1-log: 0.12%
+ca2: 0%
+
+Second 96:
+CPU
+
+p2: 15.39%
+p1: 13.01%
+dev-p1-log: 8.39%
+dev-p2-application: 7.42%
+dev-p2-artifact: 3.92%
+dev-p2-log: 1.91%
+dev-p2-wrapper: 0.14%
+dev-p1-wrapper: 0.13%
+dev-p1-artifact: 0.12%
+dev-p1-application: 0.11%
+ca2: 0%
+
+Second 97:
+CPU
+
+p2: 15.39%
+p1: 13.01%
+dev-p1-log: 8.39%
+dev-p2-application: 7.42%
+dev-p2-artifact: 3.92%
+dev-p2-log: 1.91%
+dev-p2-wrapper: 0.14%
+dev-p1-wrapper: 0.13%
+dev-p1-artifact: 0.12%
+dev-p1-application: 0.11%
+ca2: 0%
+
+Second 98:
+CPU
+
+p2: 18.75%
+p1: 12%
+dev-p2-artifact: 11.04%
+dev-p1-log: 0.22%
+dev-p2-log: 0.2%
+dev-p2-wrapper: 0.2%
+dev-p1-application: 0.18%
+dev-p1-artifact: 0.17%
+dev-p1-wrapper: 0.17%
+dev-p2-application: 0.17%
+ca2: 0%
+
+Second 99:
+CPU
+
+p1: 9.09%
+p2: 8.78%
+dev-p1-log: 1.16%
+dev-p2-log: 1.04%
+dev-p2-application: 0.27%
+dev-p2-wrapper: 0.2%
+dev-p1-artifact: 0.18%
+dev-p1-application: 0.17%
+dev-p2-artifact: 0.15%
+dev-p1-wrapper: 0.13%
+ca2: 0%
+
+Second 100:
+CPU
+
+dev-p2-log: 26.16%
+dev-p1-log: 23.86%
+p1: 18.21%
+p2: 17.65%
+dev-p1-wrapper: 0.28%
+dev-p2-artifact: 0.23%
+dev-p1-artifact: 0.22%
+dev-p2-application: 0.17%
+dev-p2-wrapper: 0.15%
+dev-p1-application: 0.14%
+ca2: 0%
+
+Second 101:
+CPU
+
+p1: 5.8%
+p2: 5.01%
+dev-p2-artifact: 0.32%
+dev-p2-log: 0.27%
+dev-p1-log: 0.26%
+dev-p2-wrapper: 0.26%
+dev-p1-application: 0.23%
+dev-p2-application: 0.23%
+dev-p1-artifact: 0.21%
+dev-p1-wrapper: 0.17%
+ca2: 0%
+
+Second 102:
+CPU
+
+p1: 13.97%
+p2: 8.7%
+dev-p2-wrapper: 0.29%
+dev-p1-application: 0.27%
+dev-p2-artifact: 0.25%
+dev-p1-log: 0.23%
+dev-p2-log: 0.22%
+dev-p2-application: 0.21%
+dev-p1-artifact: 0.17% 
+dev-p1-wrapper: 0.17%
+ca2: 0%
+
+Second 103:
+CPU
+
+p2: 5.2%
+p1: 4.26%
+dev-p1-application: 0.21%
+dev-p2-application: 0.21%
+dev-p1-log: 0.2%
+dev-p2-wrapper: 0.2%
+dev-p1-artifact: 0.19%
+dev-p2-artifact: 0.19%
+dev-p1-wrapper: 0.17%
+dev-p2-log: 0.17%
+ca2: 0%
+
+Second 104:
+CPU
+
+p2: 
+p1: 
+dev-p1-log: 
+dev-p2-log: 
+dev-p1-artifact: 0.21%
+dev-p2-application: 0.21%
+dev-p1-application: 0.2%
+dev-p2-artifact: 0.2%
+dev-p2-wrapper: 0.18%
+dev-p1-wrapper: 0.16%
+ca2: 0% 
+
+Second 105:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 338.9MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 106:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 333.87MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.81MB
+p1: 97.14MB
+ca2: 33.33MB
+
+Second 107:
+Memory
+
+dev-p2-log: 340.68MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 332.71MB
+dev-p1-log: 332.19MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.82MB
+p1: 97.15MB
+ca2: 33.33MB
+
+Second 108:
+Memory
+
+dev-p2-log: 341MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.03MB
+dev-p1-log: 332.5MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 104.11MB
+p1: 97.16MB
+ca2: 33.33MB
+
+Second 109:
+Memory
+
+dev-p2-log: 341MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.13MB
+dev-p1-log: 332.5MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.84MB
+p1: 97.16MB
+ca2: 33.33MB
+
+Second 110:
+Memory
+
+dev-p2-log: 341.1MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.1 3MB
+dev-p1-log: 332.61MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.88MB
+p1: 97.21MB
+ca2: 33.33MB
+
+Second 111:
+Memory
+
+dev-p2-log: 341.1MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.13MB
+dev-p1-log: 332.61MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.85MB
+p1: 97.18MB
+ca2: 33.33MB
+
+Second 112:
+Memory
+
+dev-p2-log: 341.1MB
+dev-p2-wrapper: 339.53MB
+dev-p2-application: 334.08MB
+dev-p2-artifact: 333.13MB
+dev-p1-log: 332.61MB
+dev-p1-wrapper: 187.28MB
+dev-p1-artifact: 185.39MB
+dev-p1-application: 183.92MB
+p2: 103.85MB
+p1 97.18MB
+ca2: 33.33MB

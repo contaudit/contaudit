@@ -1,12 +1,12 @@
 package br.ufrgs.inf.ppgc.contaudit.admin.wrapper;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.admin.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.admin.blockchain.chaincode.WrapperChainCodeService;
 
 public class WrapperService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(WrapperService.class);
 
     public String getWrapperHash() {
         logger.info("Getting Wrapper Hash...");

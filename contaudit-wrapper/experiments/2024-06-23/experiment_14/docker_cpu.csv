@@ -1,0 +1,12 @@
+host,min,max
+dev-p1-application,0.11,0.33
+dev-p1-log,0.13,27.56
+dev-p2-artifact,0.13,26.22
+dev-p2-wrapper,0.13,15.35
+dev-p1-artifact,0.12,0.31
+dev-p2-log,0.12,34.5
+dev-p2-application,0.14,54.0
+dev-p1-wrapper,0.11,0.25
+ca2,0.0,0.0
+p2,3.37,21.66
+p1,3.32,21.7

@@ -1,17 +1,17 @@
 package br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.chaincode;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.BlockchainService;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.wrapper.Wrapper;
 
 public class WrapperChainCodeService {
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(WrapperChainCodeService.class);
     private boolean isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("jdwp") >= 0;
 
     public void updateWrapperHash(Wrapper wrapper) {
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "wrapper-chaincode";
         String transactionName = "updateHash";
 
@@ -41,7 +41,7 @@ public class WrapperChainCodeService {
 
     private boolean validateWrapperHash(Wrapper wrapper){
         logger.info("Validating Wrapper...");
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "wrapper-chaincode";
         String transactionName = "validateHash";
 

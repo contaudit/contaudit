@@ -2,10 +2,10 @@ package br.ufrgs.inf.ppgc.contaudit.admin;
 
 import java.io.Console;
 import java.security.InvalidParameterException;
-import java.util.List;
 import java.util.UUID;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import br.ufrgs.inf.ppgc.contaudit.admin.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.admin.application.ApplicationService;
@@ -14,16 +14,23 @@ import br.ufrgs.inf.ppgc.contaudit.admin.application.artifact.ArtifactService;
 import br.ufrgs.inf.ppgc.contaudit.admin.wrapper.WrapperService;
 
 public class Startup {
-    private static Logger logger = LoggerInstance.get();
+    private static Logger logger = LoggerFactory.getLogger(Startup.class);
  
     public static void main(String[] args) {
-        logger.info("Initializing ContAudIT Admin...");
-        logger.info(String.format("Current directory: %s", Utils.getCurrentDirectory()));
-        int resultCode = 1;
-        while (resultCode == 1) {
-            resultCode = showMenu();
+        try {
+            logger.info("Initializing ContAudIT Admin...");
+            String logString = String.format("Current directory: %s", Utils.getCurrentDirectory());
+            logger.info(logString);
+            int resultCode = 1;
+            while (resultCode == 1) {
+                resultCode = showMenu();
+            }
+        } catch (Exception ex) {
+            logger.error(ex.getMessage());
         }
-        logger.info("Finishing ContAudIT Admin...");    
+        finally {
+            logger.info("Finishing ContAudIT Admin...");
+        }
     }
 
     private static int showMenu() {
@@ -55,8 +62,8 @@ public class Startup {
                 new WrapperService().updateWrapperHash(newWrapperHash);
                 break;
             case "3":
-                List<Application> applications = new ApplicationService().getApplications();
-                logger.info(applications.toString());
+                String applications = new ApplicationService().getApplications().toString();
+                logger.info(applications);
                 break;
             case "4":
                 logger.info("Enter the application name: ");
@@ -74,8 +81,8 @@ public class Startup {
                 new ApplicationService().createApplication(application);
                 break;
             case "5":
-                List<Artifact> artifacts = new ArtifactService().getArtifacts();
-                logger.info(artifacts.toString());
+                String artifacts = new ArtifactService().getArtifacts().toString();
+                logger.info(artifacts);
                 break;
             case "6":
                 logger.info("Enter the artifact application id: ");

@@ -1,0 +1,12 @@
+,min,max
+p2,3.13,11.25
+p1,2.43,5.97
+dev-p1-artifact,0.18,0.26
+dev-p2-artifact,0.13,0.24
+dev-p1-application,0.15,0.26
+dev-p2-application,0.16,0.23
+dev-p1-wrapper,0.15,0.23
+dev-p2-wrapper,0.15,0.26
+dev-p2-log,0.15,0.24
+ca2,0.0,0.0
+dev-p1-log,0.17,0.31

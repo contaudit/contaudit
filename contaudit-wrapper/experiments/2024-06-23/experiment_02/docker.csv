@@ -1,0 +1,12 @@
+Host,CPU_Min,CPU_Max
+p1,1.64,5.87
+p2,1.74,5.45
+p1-log,0.1,8.76
+p1-artifact,0.08,0.22
+p2-artifact,0.11,4.61
+p2-log,0.08,6.39
+p1-application,0.09,0.26
+p2-wrapper,0.11,6.23
+p2-application,0.09,3.96
+p1-wrapper,0.08,0.21
+ca2,0.0,0.11

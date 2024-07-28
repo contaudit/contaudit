@@ -10,7 +10,7 @@ import br.ufrgs.inf.ppgc.contaudit.admin.application.artifact.Artifact;
 import br.ufrgs.inf.ppgc.contaudit.admin.blockchain.BlockchainService;
 
 public class ArtifactChainCodeService {
-    private static final String CHANNEL_NAME = "mychannel";
+    private static final String CHANNEL_NAME = "c1";
     private static final String CHAINCHODE_NAME = "artifact-chaincode";
 
     public List<Artifact> getArtifacts() {

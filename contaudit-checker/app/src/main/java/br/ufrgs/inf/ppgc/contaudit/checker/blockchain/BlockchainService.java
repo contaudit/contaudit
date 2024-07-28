@@ -60,7 +60,8 @@ public class BlockchainService {
                 response = transaction.evaluate(args);
             
             String result = new String(response, StandardCharsets.UTF_8);
-            logger.info(String.format("Response %s", result));
+            String logString = String.format("Response %s", result);
+            logger.info(logString);
             return result;
         } catch (ContractException | TimeoutException | InterruptedException e) {
             e.printStackTrace();

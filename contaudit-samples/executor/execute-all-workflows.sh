@@ -2,7 +2,7 @@
 executeWrapper() {
     local thread=$1
     local workflow=$2
-    java -Dorg.hyperledger.fabric.sdk.configuration="./contaudit-wrapper/app/config.properties" -Dlog4j2.simplelogStatusLoggerLevel="OFF" -jar ./contaudit-wrapper.jar "ContAudITWrappe#"$thread " ./contaudit-samples/executor/executor "$workflow
+    java -Dorg.hyperledger.fabric.sdk.configuration="./contaudit-wrapper/app/config.properties" -Dlog4j2.simplelogStatusLoggerLevel="OFF" -jar ./contaudit-wrapper.jar "ContAudITWrapper#"$thread " ./contaudit-samples/executor/executor "$workflow
 }
 
 thread=0

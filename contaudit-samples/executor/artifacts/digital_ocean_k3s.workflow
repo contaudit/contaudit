@@ -14,8 +14,8 @@ then
     echo '[digital_ocean_k3s_workflow] Defining Terraform recipe variables file...'
     cd example-terraform-modules
     rm -f terraform.tfvars
-    do_token='YOUR_TOKEN'
-    ssh_key_fingerprints='YOUR_FINGERPRINT'
+    do_token='xxx'
+    ssh_key_fingerprints='xxx'
     echo "# terraform.tfvars (example)\n\n# Your DigitalOcean Personal Access Token (Read & Write)\ndo_token = \"$do_token\"\n\n# Your SSH Public Key Fingerprint\nssh_key_fingerprints = [\"$ssh_key_fingerprints\"]" > terraform.tfvars
 
     echo '[digital_ocean_k3s_workflow] Checking if package terraform exists...'

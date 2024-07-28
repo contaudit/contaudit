@@ -3,12 +3,12 @@ package br.ufrgs.inf.ppgc.contaudit.admin.application;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.admin.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.admin.blockchain.chaincode.ApplicationChainCodeService;
 
 public class ApplicationService {
-    private Logger logger =  LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(ApplicationService.class);
 
     public List<Application> getApplications() {
         logger.info("Getting Applications...");

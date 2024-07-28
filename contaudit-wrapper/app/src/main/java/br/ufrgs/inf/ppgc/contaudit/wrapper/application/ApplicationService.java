@@ -9,12 +9,12 @@ import java.util.StringTokenizer;
 import java.util.UUID;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.security.HashService;
 
 public class ApplicationService {
-    private Logger logger =  LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(ApplicationService.class);
 
     public Application loadData(String commandLine) throws IOException {
         Application application = new Application();

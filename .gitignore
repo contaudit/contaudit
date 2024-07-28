@@ -1,5 +1,6 @@
 .vscode/
 vars
-*.properties
-*.jar
-*_state.txt
+/*.properties
+/*.jar
+/*_state.txt
+/*.log

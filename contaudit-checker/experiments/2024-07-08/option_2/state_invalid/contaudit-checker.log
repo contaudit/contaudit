@@ -1,0 +1,71 @@
+2024-07-09 02:10:43,158 INFO - Initializing ContAudIT Checker...
+2024-07-09 02:10:43,167 INFO - Current directory: /home/kali/Code/ufrgs-poc
+2024-07-09 02:10:43,168 INFO - ---------------------------
+2024-07-09 02:10:43,168 INFO - Menu:
+2024-07-09 02:10:43,168 INFO - 0 - Exit
+2024-07-09 02:10:43,168 INFO - 1 - Save Environment State
+2024-07-09 02:10:43,168 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:10:43,168 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:10:43,168 INFO - ---------------------------
+2024-07-09 02:10:43,168 INFO - Choose an option: 1
+2024-07-09 02:10:45,726 INFO - Analyzing current environment state...
+2024-07-09 02:10:45,846 INFO - Saving current environment state...
+2024-07-09 02:10:45,847 INFO - ---------------------------
+2024-07-09 02:10:45,848 INFO - Menu:
+2024-07-09 02:10:45,848 INFO - 0 - Exit
+2024-07-09 02:10:45,848 INFO - 1 - Save Environment State
+2024-07-09 02:10:45,848 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:10:45,848 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:10:45,848 INFO - ---------------------------
+2024-07-09 02:10:45,848 INFO - Choose an option: 0
+2024-07-09 02:10:46,800 INFO - Finishing ContAudIT Checker...
+
+2024-07-09 02:12:27,552 INFO - Initializing ContAudIT Checker...
+2024-07-09 02:12:27,560 INFO - Current directory: /home/kali/Code/ufrgs-poc
+2024-07-09 02:12:27,560 INFO - ---------------------------
+2024-07-09 02:12:27,560 INFO - Menu:
+2024-07-09 02:12:27,560 INFO - 0 - Exit
+2024-07-09 02:12:27,561 INFO - 1 - Save Environment State
+2024-07-09 02:12:27,561 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:12:27,561 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:12:27,561 INFO - ---------------------------
+2024-07-09 02:12:27,561 INFO - Choose an option: 2
+2024-07-09 02:12:31,254 INFO - Searching logs in blockchain...
+2024-07-09 02:12:33,205 INFO - Response [...]
+2024-07-09 02:12:45,351 INFO - Last log post-state hash: ddbf107848f30515efbb98d4ff57a5084856f9facdd673adaa9ba8367f68fdc4
+2024-07-09 02:12:45,352 INFO - Analyzing current environment state...
+2024-07-09 02:12:45,421 INFO - Generating current state hash...
+2024-07-09 02:12:45,427 INFO - Current state hash: f8147e97fbeeb466d4e1cfe9512a5dbda95ac628685604e1d81431d7339ec53b
+2024-07-09 02:12:45,428 INFO - Comparing current state hash and post-state hash in last log saved...
+2024-07-09 02:12:45,428 INFO - Current State Invalid!
+2024-07-09 02:12:45,428 INFO - ---------------------------
+2024-07-09 02:12:45,428 INFO - Menu:
+2024-07-09 02:12:45,428 INFO - 0 - Exit
+2024-07-09 02:12:45,428 INFO - 1 - Save Environment State
+2024-07-09 02:12:45,428 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:12:45,428 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:12:45,428 INFO - ---------------------------
+2024-07-09 02:12:45,428 INFO - Choose an option: 0
+2024-07-09 02:12:50,642 INFO - Finishing ContAudIT Checker...
+
+2024-07-09 02:12:58,632 INFO - Initializing ContAudIT Checker...
+2024-07-09 02:12:58,641 INFO - Current directory: /home/kali/Code/ufrgs-poc
+2024-07-09 02:12:58,642 INFO - ---------------------------
+2024-07-09 02:12:58,642 INFO - Menu:
+2024-07-09 02:12:58,642 INFO - 0 - Exit
+2024-07-09 02:12:58,642 INFO - 1 - Save Environment State
+2024-07-09 02:12:58,642 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:12:58,642 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:12:58,642 INFO - ---------------------------
+2024-07-09 02:12:58,642 INFO - Choose an option: 1
+2024-07-09 02:13:00,427 INFO - Analyzing current environment state...
+2024-07-09 02:13:00,559 INFO - Saving current environment state...
+2024-07-09 02:13:00,560 INFO - ---------------------------
+2024-07-09 02:13:00,561 INFO - Menu:
+2024-07-09 02:13:00,561 INFO - 0 - Exit
+2024-07-09 02:13:00,561 INFO - 1 - Save Environment State
+2024-07-09 02:13:00,561 INFO - 2 - Validate Environment State by last environment hash stored
+2024-07-09 02:13:00,561 INFO - 3 - Validate Environment State by applying environment diffs since the last saved state
+2024-07-09 02:13:00,561 INFO - ---------------------------
+2024-07-09 02:13:00,561 INFO - Choose an option: 0
+2024-07-09 02:13:01,309 INFO - Finishing ContAudIT Checker...

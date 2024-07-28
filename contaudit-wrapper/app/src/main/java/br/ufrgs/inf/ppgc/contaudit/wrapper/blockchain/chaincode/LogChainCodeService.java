@@ -16,7 +16,7 @@ public class LogChainCodeService {
     }
 
     public void insertLog(Log log){
-        String channelName = "mychannel";
+        String channelName = "c1";
         String chaincodeName = "log-chaincode";
         String transactionName = "insert";
 

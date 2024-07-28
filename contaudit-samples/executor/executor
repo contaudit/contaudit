@@ -1,4 +1,4 @@
 #! /bin/bash
-echo 'Initializing the workflow...'
-sh $1
-echo 'Finished!'
+echo $(date +"%Y-%m-%d %T.%N") '[executor] Initializing the workflow...'
+sh $@
+echo $(date +"%Y-%m-%d %T.%N") '[executor] Finished!'

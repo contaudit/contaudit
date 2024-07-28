@@ -1,0 +1,58 @@
+$ java -Dlog4j2.simplelogStatusLoggerLevel="OFF" -jar ./contaudit-admin.jar
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+2024-07-14 19:26:18,957 INFO - Initializing ContAudIT Admin...
+2024-07-14 19:26:18,959 INFO - Current directory: /home/kali/Code/ufrgs-poc/contaudit-admin.jar
+2024-07-14 19:26:18,959 INFO - ---------------------------
+2024-07-14 19:26:18,959 INFO - Menu:
+2024-07-14 19:26:18,959 INFO - 0 - Exit
+2024-07-14 19:26:18,959 INFO - 1 - Get Wrapper Hash
+2024-07-14 19:26:18,959 INFO - 2 - Update Wrapper Hash
+2024-07-14 19:26:18,959 INFO - 3 - List Applications
+2024-07-14 19:26:18,959 INFO - 4 - Create New Application
+2024-07-14 19:26:18,959 INFO - 5 - List Artifacs
+2024-07-14 19:26:18,959 INFO - 6 - Create New Artifact
+2024-07-14 19:26:18,959 INFO - ---------------------------
+2024-07-14 19:26:18,959 INFO - Choose an option: 1
+2024-07-14 19:26:21,753 INFO - Getting Wrapper Hash...
+2024-07-14 19:26:23,583 INFO - Response 097302a508965396e02e4d0ee878a4544c47ebc22df9ef4b691fed03ad71fec0
+2024-07-14 19:26:23,587 INFO - 097302a508965396e02e4d0ee878a4544c47ebc22df9ef4b691fed03ad71fec0
+2024-07-14 19:26:23,588 INFO - ---------------------------
+2024-07-14 19:26:23,588 INFO - Menu:
+2024-07-14 19:26:23,588 INFO - 0 - Exit
+2024-07-14 19:26:23,588 INFO - 1 - Get Wrapper Hash
+2024-07-14 19:26:23,588 INFO - 2 - Update Wrapper Hash
+2024-07-14 19:26:23,588 INFO - 3 - List Applications
+2024-07-14 19:26:23,588 INFO - 4 - Create New Application
+2024-07-14 19:26:23,588 INFO - 5 - List Artifacs
+2024-07-14 19:26:23,588 INFO - 6 - Create New Artifact
+2024-07-14 19:26:23,589 INFO - ---------------------------
+2024-07-14 19:26:23,589 INFO - Choose an option: 3
+2024-07-14 19:26:30,361 INFO - Getting Applications...
+2024-07-14 19:26:30,850 INFO - Response [{"name":"executor","id":"7bac5e29-0854-4d0a-892c-42e6fb9f3728","version":"1.0.0","hash":"ef9f814aa8bb3e5896f76883869216c4c904c0b9fc99a436447244d9a6ab032c"}]
+2024-07-14 19:26:30,880 INFO - [Application{id=7bac5e29-0854-4d0a-892c-42e6fb9f3728, name = executor, version = 1.0.0, hash = ef9f814aa8bb3e5896f76883869216c4c904c0b9fc99a436447244d9a6ab032c}]
+2024-07-14 19:26:30,880 INFO - ---------------------------
+2024-07-14 19:26:30,881 INFO - Menu:
+2024-07-14 19:26:30,881 INFO - 0 - Exit
+2024-07-14 19:26:30,881 INFO - 1 - Get Wrapper Hash
+2024-07-14 19:26:30,881 INFO - 2 - Update Wrapper Hash
+2024-07-14 19:26:30,881 INFO - 3 - List Applications
+2024-07-14 19:26:30,881 INFO - 4 - Create New Application
+2024-07-14 19:26:30,881 INFO - 5 - List Artifacs
+2024-07-14 19:26:30,881 INFO - 6 - Create New Artifact
+2024-07-14 19:26:30,881 INFO - ---------------------------
+2024-07-14 19:26:30,881 INFO - Choose an option: 5
+2024-07-14 19:26:36,246 INFO - Getting Artifacts...
+2024-07-14 19:26:36,945 INFO - Response [{"application":"executor-ef9f814aa8bb3e5896f76883869216c4c904c0b9fc99a436447244d9a6ab032c","name":"hexedit.workflow","id":"0888633f-7fce-44cd-87a4-1e33a16fe88f","hash":"a3dde5e4cd15011790140120e35b239126721f8ed8a68f26c0df007c51583e8f","content":"#! /bin/sh\\necho '[hexedit_workflow] Checking if package Hexedit exists...'\\nif [ $(dpkg -s hexedit | grep -c \\\"installed\\\") -eq 0 ]\\nthen\\n    echo '[hexedit_workflow] Package not exists! Installing...'\\n    sudo apt-get install hexedit -y\\nelse\\n    echo '[hexedit_workflow] Package exists! Removing...'\\n    sudo apt-get remove hexedit -y\\nfi"}]
+2024-07-14 19:26:36,952 INFO - [Artifact{id=0888633f-7fce-44cd-87a4-1e33a16fe88f, applicationVersion=executor-ef9f814aa8bb3e5896f76883869216c4c904c0b9fc99a436447244d9a6ab032c, name = hexedit.workflow, hash = a3dde5e4cd15011790140120e35b239126721f8ed8a68f26c0df007c51583e8f, content = #! /bin/sh\necho '[hexedit_workflow] Checking if package Hexedit exists...'\nif [ $(dpkg -s hexedit | grep -c \"installed\") -eq 0 ]\nthen\n    echo '[hexedit_workflow] Package not exists! Installing...'\n    sudo apt-get install hexedit -y\nelse\n    echo '[hexedit_workflow] Package exists! Removing...'\n    sudo apt-get remove hexedit -y\nfi}]
+2024-07-14 19:26:36,952 INFO - ---------------------------
+2024-07-14 19:26:36,952 INFO - Menu:
+2024-07-14 19:26:36,952 INFO - 0 - Exit
+2024-07-14 19:26:36,952 INFO - 1 - Get Wrapper Hash
+2024-07-14 19:26:36,952 INFO - 2 - Update Wrapper Hash
+2024-07-14 19:26:36,952 INFO - 3 - List Applications
+2024-07-14 19:26:36,952 INFO - 4 - Create New Application
+2024-07-14 19:26:36,952 INFO - 5 - List Artifacs
+2024-07-14 19:26:36,952 INFO - 6 - Create New Artifact
+2024-07-14 19:26:36,952 INFO - ---------------------------
+2024-07-14 19:26:36,952 INFO - Choose an option: 0
+2024-07-14 19:26:39,677 INFO - Finishing ContAudIT Admin...

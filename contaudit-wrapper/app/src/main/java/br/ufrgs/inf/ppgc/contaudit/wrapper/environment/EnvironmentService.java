@@ -6,28 +6,30 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import br.ufrgs.inf.ppgc.contaudit.wrapper.LoggerInstance;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.Utils;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.security.HashService;
 
 public class EnvironmentService {
     private static final String STATE_DEF_FILE_SUFFIX = "_state_temp.txt";
     
-    private Logger logger = LoggerInstance.get();
+    private Logger logger = LoggerFactory.getLogger(EnvironmentService.class);
 
     public String checkStateHash(String stateName) throws InterruptedException, IOException {
         String currentState = this.getCurrentState();
         this.saveCurrentState(currentState, stateName);
         String hash = new HashService().generateSHA3256Hash(currentState);
 
-        this.logger.info(String.format("Environment state hash: %s", hash));
+        String logString = String.format("Environment state hash: %s", hash);
+        this.logger.info(logString);
         return hash;
     }
 
     public String checkDiffState(String firstStateName, String secondStateName) throws InterruptedException, IOException {
         String packageDiff = this.getFilesDiff(firstStateName, secondStateName);
-        this.logger.info(String.format("Environment diff: %s", packageDiff));
+        String logString = String.format("Environment diff: %s", packageDiff);
+        this.logger.info(logString);
 
         return packageDiff;
     }
@@ -42,9 +44,17 @@ public class EnvironmentService {
         this.createFile(currentState, stateName + STATE_DEF_FILE_SUFFIX);
     }
 
+    @java.lang.SuppressWarnings("java:S125")
     private String getCurrentState() throws IOException, InterruptedException {
         this.logger.info("Analyzing current environment state...");
+        // Define here the commands to collect environment state
+        
+        // List packages on operation system
         String command = "dpkg -l | awk '{print $2, $3}'";
+
+        // List files modified since specific date
+        //String command = "find / -newermt '2024-06-23T00:00:00' ! -newermt $(date --iso-8601=ns) -printf '%CY-%Cm-%CdT%CH:%CM:%CS %p\n'";
+        
         return this.runCommand(command);
     }
 
