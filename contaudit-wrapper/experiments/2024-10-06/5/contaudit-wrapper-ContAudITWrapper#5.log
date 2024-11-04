@@ -1,0 +1,66 @@
+2024-10-11 09:02:27,119 INFO - ContAudITWrapper#5 - Initializing ContAudIT Wrapper...
+2024-10-11 09:02:27,129 INFO - ContAudITWrapper#5 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 09:02:29,315 INFO - ContAudITWrapper#5 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 09:02:29,321 INFO - ContAudITWrapper#5 - Validating Wrapper...
+2024-10-11 09:02:31,696 INFO - ContAudITWrapper#5 - Response true
+2024-10-11 09:02:31,704 INFO - ContAudITWrapper#5 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 09:02:31,704 INFO - ContAudITWrapper#5 - Validating Application...
+2024-10-11 09:02:32,276 INFO - ContAudITWrapper#5 - Response true
+2024-10-11 09:02:32,278 INFO - ContAudITWrapper#5 - Artifact vim.workflow hash: c2cd8e965b29c5d0c1074b5d083f6beb66f185746aced776659b092dece12743
+2024-10-11 09:02:32,282 INFO - ContAudITWrapper#5 - Validating Artifact...
+2024-10-11 09:02:32,837 INFO - ContAudITWrapper#5 - Response true
+2024-10-11 09:02:32,838 INFO - ContAudITWrapper#5 - Running pre-command actions...
+2024-10-11 09:02:32,839 INFO - ContAudITWrapper#5 - Analyzing current environment state...
+2024-10-11 09:02:32,845 INFO - ContAudITWrapper#5 - Saving current environment state...
+2024-10-11 09:02:32,846 INFO - ContAudITWrapper#5 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:02:32,846 INFO - ContAudITWrapper#5 - Executing command...
+2024-10-11 09:02:34,345 INFO - ContAudITWrapper#5 - Command output: 
+2024-10-11 09:02:32.850907623 [executor] Initializing the workflow...
+[vim_workflow] Checking operating system...
+[vim_workflow] Detected Amazon Linux.
+[vim_workflow] Checking if vim is installed...
+[vim_workflow] Vim not found! Installing...
+Last metadata expiration check: 5:05:43 ago on Fri Oct 11 03:56:50 2024.
+Dependencies resolved.
+================================================================================
+ Package          Arch       Version                      Repository       Size
+================================================================================
+Installing:
+ vim-enhanced     x86_64     2:9.0.2153-1.amzn2023        amazonlinux     1.9 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.9 M
+Installed size: 4.0 M
+Downloading Packages:
+vim-enhanced-9.0.2153-1.amzn2023.x86_64.rpm      19 MB/s | 1.9 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            13 MB/s | 1.9 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+  Running scriptlet: vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+  Verifying        : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+
+Installed:
+  vim-enhanced-2:9.0.2153-1.amzn2023.x86_64                                     
+
+Complete!
+2024-10-11 09:02:34.344694671 [executor] Finished!
+
+2024-10-11 09:02:34,345 INFO - ContAudITWrapper#5 - Running post-command actions...
+2024-10-11 09:02:34,345 INFO - ContAudITWrapper#5 - Analyzing current environment state...
+2024-10-11 09:02:34,350 INFO - ContAudITWrapper#5 - Saving current environment state...
+2024-10-11 09:02:34,351 INFO - ContAudITWrapper#5 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:02:34,351 INFO - ContAudITWrapper#5 - Checking environment diff...
+2024-10-11 09:02:34,354 INFO - ContAudITWrapper#5 - Environment diff: 
+2024-10-11 09:02:34,354 INFO - ContAudITWrapper#5 - Cleaning temporary files...
+2024-10-11 09:02:34,357 INFO - ContAudITWrapper#5 - Sending to blockchain...
+2024-10-11 09:02:36,981 INFO - ContAudITWrapper#5 - Response 
+2024-10-11 09:02:36,982 INFO - ContAudITWrapper#5 - Finishing ContAudIT Wrapper...

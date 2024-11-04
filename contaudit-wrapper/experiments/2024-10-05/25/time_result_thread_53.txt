@@ -1,0 +1,63 @@
+2024-10-11 05:29:54,370 INFO - ContAudITWrapper#53 - Initializing ContAudIT Wrapper...
+2024-10-11 05:29:54,552 INFO - ContAudITWrapper#53 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 05:30:17,961 INFO - ContAudITWrapper#53 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 05:30:17,969 INFO - ContAudITWrapper#53 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+Oct 11, 2024 5:31:14 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:31:20 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:31:28,921 INFO - ContAudITWrapper#53 - Response true
+2024-10-11 05:31:29,147 INFO - ContAudITWrapper#53 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 05:31:29,187 INFO - ContAudITWrapper#53 - Validating Application...
+Oct 11, 2024 5:31:30 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:31:32 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export metrics. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:31:35 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:31:40,796 INFO - ContAudITWrapper#53 - Response true
+2024-10-11 05:31:40,803 INFO - ContAudITWrapper#53 - Artifact apache2.workflow hash: bdb4cee855e21446b6ae53ddcb76a1632ef8c4545b5db0517e01ffd552157f6e
+2024-10-11 05:31:40,832 INFO - ContAudITWrapper#53 - Validating Artifact...
+Oct 11, 2024 5:31:45 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:31:50 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:31:56,902 INFO - ContAudITWrapper#53 - Response true
+2024-10-11 05:31:56,914 INFO - ContAudITWrapper#53 - Running pre-command actions...
+2024-10-11 05:31:56,915 INFO - ContAudITWrapper#53 - Analyzing current environment state...
+2024-10-11 05:31:57,085 INFO - ContAudITWrapper#53 - Saving current environment state...
+2024-10-11 05:31:57,087 INFO - ContAudITWrapper#53 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:31:57,088 INFO - ContAudITWrapper#53 - Executing command...
+2024-10-11 05:31:58,640 INFO - ContAudITWrapper#53 - Command output: 
+2024-10-11 05:31:57.209518796 [executor] Initializing the workflow...
+[apache2_workflow] Apache HTTP Server already installed.
+[apache2_workflow] UserDir module already loaded.
+[apache2_workflow] Configs to UserDir already exist.
+[apache2_workflow] public_html directory already exists in /home/ec2-user.
+[apache2_workflow] Creating a simple webpage...
+[apache2_workflow] Moving webpage to Apache HTTP Server user website folder...
+[apache2_workflow] Page moved successfully!
+2024-10-11 05:31:58.635561735 [executor] Finished!
+
+2024-10-11 05:31:58,640 INFO - ContAudITWrapper#53 - Running post-command actions...
+2024-10-11 05:31:58,641 INFO - ContAudITWrapper#53 - Analyzing current environment state...
+2024-10-11 05:31:58,762 INFO - ContAudITWrapper#53 - Saving current environment state...
+2024-10-11 05:31:58,762 INFO - ContAudITWrapper#53 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:31:58,765 INFO - ContAudITWrapper#53 - Checking environment diff...
+2024-10-11 05:31:58,871 INFO - ContAudITWrapper#53 - Environment diff: 
+2024-10-11 05:31:58,872 INFO - ContAudITWrapper#53 - Cleaning temporary files...
+2024-10-11 05:31:58,904 INFO - ContAudITWrapper#53 - Sending to blockchain...
+Oct 11, 2024 5:32:00 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:32:05 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:32:10 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:32:10,809 INFO - ContAudITWrapper#53 - Response 
+2024-10-11 05:32:10,811 INFO - ContAudITWrapper#53 - Finishing ContAudIT Wrapper...
+
+real	2m24.432s
+user	0m21.727s
+sys	0m1.038s
+Thread: 53

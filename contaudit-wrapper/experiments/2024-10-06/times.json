@@ -1,0 +1,212 @@
+[
+    {
+        "thread": 1,
+        "real": 10.691,
+        "user": 13.145,
+        "sys": 0.869,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/1/time_result_thread_1.txt"
+    },
+    {
+        "thread": 2,
+        "real": 10.055,
+        "user": 12.981,
+        "sys": 0.83,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/2/time_result_thread_2.txt"
+    },
+    {
+        "thread": 3,
+        "real": 10.64,
+        "user": 12.983,
+        "sys": 1.015,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/3/time_result_thread_3.txt"
+    },
+    {
+        "thread": 4,
+        "real": 10.038,
+        "user": 12.753,
+        "sys": 0.739,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/4/time_result_thread_4.txt"
+    },
+    {
+        "thread": 5,
+        "real": 10.573,
+        "user": 12.707,
+        "sys": 0.89,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/5/time_result_thread_5.txt"
+    },
+    {
+        "thread": 6,
+        "real": 10.042,
+        "user": 12.941,
+        "sys": 0.957,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/6/time_result_thread_6.txt"
+    },
+    {
+        "thread": 7,
+        "real": 10.535,
+        "user": 12.994,
+        "sys": 0.783,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/7/time_result_thread_7.txt"
+    },
+    {
+        "thread": 8,
+        "real": 9.993,
+        "user": 12.922,
+        "sys": 0.881,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/8/time_result_thread_8.txt"
+    },
+    {
+        "thread": 9,
+        "real": 10.625,
+        "user": 13.278,
+        "sys": 0.688,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/9/time_result_thread_9.txt"
+    },
+    {
+        "thread": 10,
+        "real": 10.181,
+        "user": 13.266,
+        "sys": 0.744,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/10/time_result_thread_10.txt"
+    },
+    {
+        "thread": 11,
+        "real": 10.528,
+        "user": 12.971,
+        "sys": 0.758,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/11/time_result_thread_11.txt"
+    },
+    {
+        "thread": 12,
+        "real": 10.202,
+        "user": 13.133,
+        "sys": 0.792,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/12/time_result_thread_12.txt"
+    },
+    {
+        "thread": 13,
+        "real": 10.714,
+        "user": 12.879,
+        "sys": 1.159,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/13/time_result_thread_13.txt"
+    },
+    {
+        "thread": 14,
+        "real": 10.141,
+        "user": 13.151,
+        "sys": 0.955,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/14/time_result_thread_14.txt"
+    },
+    {
+        "thread": 15,
+        "real": 10.845,
+        "user": 13.095,
+        "sys": 0.696,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/15/time_result_thread_15.txt"
+    },
+    {
+        "thread": 16,
+        "real": 10.022,
+        "user": 12.712,
+        "sys": 0.838,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/16/time_result_thread_16.txt"
+    },
+    {
+        "thread": 17,
+        "real": 10.619,
+        "user": 13.012,
+        "sys": 0.816,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/17/time_result_thread_17.txt"
+    },
+    {
+        "thread": 18,
+        "real": 10.114,
+        "user": 13.16,
+        "sys": 0.64,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/18/time_result_thread_18.txt"
+    },
+    {
+        "thread": 19,
+        "real": 10.609,
+        "user": 12.662,
+        "sys": 0.912,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/19/time_result_thread_19.txt"
+    },
+    {
+        "thread": 20,
+        "real": 10.154,
+        "user": 12.856,
+        "sys": 0.959,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/20/time_result_thread_20.txt"
+    },
+    {
+        "thread": 21,
+        "real": 10.642,
+        "user": 13.364,
+        "sys": 0.858,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/21/time_result_thread_21.txt"
+    },
+    {
+        "thread": 22,
+        "real": 10.146,
+        "user": 13.174,
+        "sys": 0.891,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/22/time_result_thread_22.txt"
+    },
+    {
+        "thread": 23,
+        "real": 10.59,
+        "user": 12.844,
+        "sys": 0.886,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/23/time_result_thread_23.txt"
+    },
+    {
+        "thread": 24,
+        "real": 10.093,
+        "user": 12.761,
+        "sys": 0.894,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/24/time_result_thread_24.txt"
+    },
+    {
+        "thread": 25,
+        "real": 10.659,
+        "user": 12.896,
+        "sys": 1.046,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/25/time_result_thread_25.txt"
+    },
+    {
+        "thread": 26,
+        "real": 10.121,
+        "user": 13.168,
+        "sys": 0.715,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/26/time_result_thread_26.txt"
+    },
+    {
+        "thread": 27,
+        "real": 10.539,
+        "user": 12.791,
+        "sys": 0.721,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/27/time_result_thread_27.txt"
+    },
+    {
+        "thread": 28,
+        "real": 10.227,
+        "user": 13.343,
+        "sys": 0.819,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/28/time_result_thread_28.txt"
+    },
+    {
+        "thread": 29,
+        "real": 10.516,
+        "user": 13.051,
+        "sys": 0.771,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/29/time_result_thread_29.txt"
+    },
+    {
+        "thread": 30,
+        "real": 10.235,
+        "user": 13.333,
+        "sys": 0.747,
+        "file": "./contaudit-wrapper/experiments/2024-10-06/30/time_result_thread_30.txt"
+    }
+]

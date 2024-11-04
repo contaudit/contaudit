@@ -1,0 +1,9 @@
+[
+    {
+        "thread": 1,
+        "real": 473.266,
+        "user": 17.387,
+        "sys": 1.493,
+        "file": "./contaudit-wrapper/experiments/2024-10-12/1/time_result_thread_1.txt"
+    }
+]

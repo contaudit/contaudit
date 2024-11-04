@@ -1,0 +1,61 @@
+2024-10-10 03:43:07,140 INFO - ContAudITWrapper#90 - Initializing ContAudIT Wrapper...
+2024-10-10 03:43:07,378 INFO - ContAudITWrapper#90 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-10 03:43:27,755 INFO - ContAudITWrapper#90 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-10 03:43:27,832 INFO - ContAudITWrapper#90 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+Oct 10, 2024 3:44:18 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 10, 2024 3:44:23 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-10 03:44:26,732 INFO - ContAudITWrapper#90 - Response true
+2024-10-10 03:44:26,748 INFO - ContAudITWrapper#90 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-10 03:44:26,749 INFO - ContAudITWrapper#90 - Validating Application...
+Oct 10, 2024 3:44:28 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 10, 2024 3:44:33 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-10 03:44:41,231 INFO - ContAudITWrapper#90 - Response true
+2024-10-10 03:44:41,248 INFO - ContAudITWrapper#90 - Artifact user.workflow hash: 52877374d8c54314b7af92814eaf729121e99a87e9706a2888cd9bcd951b11c9
+2024-10-10 03:44:41,257 INFO - ContAudITWrapper#90 - Validating Artifact...
+%d [%thread] %-5level %logger - %msg%n java.lang.NullPointerException: Cannot invoke "org.hyperledger.fabric.sdk.HFClient.getExecutorService()" because "this.client" is null
+	at org.hyperledger.fabric.sdk.Channel.lambda$startEventQue$13(Channel.java:5954) ~[contaudit-wrapper.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:842) [?:?]
+Oct 10, 2024 3:44:42 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export metrics. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 10, 2024 3:44:43 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 10, 2024 3:44:48 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-10 03:44:51,837 INFO - ContAudITWrapper#90 - Response true
+2024-10-10 03:44:51,843 INFO - ContAudITWrapper#90 - Running pre-command actions...
+2024-10-10 03:44:51,844 INFO - ContAudITWrapper#90 - Analyzing current environment state...
+2024-10-10 03:44:51,952 INFO - ContAudITWrapper#90 - Saving current environment state...
+2024-10-10 03:44:51,953 INFO - ContAudITWrapper#90 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-10 03:44:51,953 INFO - ContAudITWrapper#90 - Executing command...
+Oct 10, 2024 3:44:53 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-10 03:44:57,752 INFO - ContAudITWrapper#90 - Command output: 
+2024-10-10 03:44:52.078798934 [executor] Initializing the workflow...
+[useradd_workflow] User contaudit90 does not exist. Creating...
+[useradd_workflow] User contaudit90 created successfully.
+2024-10-10 03:44:57.750279166 [executor] Finished!
+
+2024-10-10 03:44:57,752 INFO - ContAudITWrapper#90 - Running post-command actions...
+2024-10-10 03:44:57,752 INFO - ContAudITWrapper#90 - Analyzing current environment state...
+2024-10-10 03:44:57,759 INFO - ContAudITWrapper#90 - Saving current environment state...
+2024-10-10 03:44:57,759 INFO - ContAudITWrapper#90 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-10 03:44:57,760 INFO - ContAudITWrapper#90 - Checking environment diff...
+2024-10-10 03:44:57,765 INFO - ContAudITWrapper#90 - Environment diff: 
+2024-10-10 03:44:57,767 INFO - ContAudITWrapper#90 - Cleaning temporary files...
+2024-10-10 03:44:57,771 INFO - ContAudITWrapper#90 - Sending to blockchain...
+Oct 10, 2024 3:44:58 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-10 03:44:59,354 INFO - ContAudITWrapper#90 - Response 
+2024-10-10 03:44:59,355 INFO - ContAudITWrapper#90 - Finishing ContAudIT Wrapper...
+
+real	1m59.507s
+user	0m20.145s
+sys	0m1.086s
+Thread: 90

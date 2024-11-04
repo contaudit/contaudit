@@ -1,0 +1,74 @@
+2024-10-11 09:03:12,029 INFO - ContAudITWrapper#9 - Initializing ContAudIT Wrapper...
+2024-10-11 09:03:12,041 INFO - ContAudITWrapper#9 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 09:03:14,221 INFO - ContAudITWrapper#9 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 09:03:14,228 INFO - ContAudITWrapper#9 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+2024-10-11 09:03:16,608 INFO - ContAudITWrapper#9 - Response true
+2024-10-11 09:03:16,615 INFO - ContAudITWrapper#9 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 09:03:16,616 INFO - ContAudITWrapper#9 - Validating Application...
+2024-10-11 09:03:17,212 INFO - ContAudITWrapper#9 - Response true
+2024-10-11 09:03:17,214 INFO - ContAudITWrapper#9 - Artifact vim.workflow hash: c2cd8e965b29c5d0c1074b5d083f6beb66f185746aced776659b092dece12743
+2024-10-11 09:03:17,220 INFO - ContAudITWrapper#9 - Validating Artifact...
+2024-10-11 09:03:17,791 INFO - ContAudITWrapper#9 - Response true
+2024-10-11 09:03:17,792 INFO - ContAudITWrapper#9 - Running pre-command actions...
+2024-10-11 09:03:17,793 INFO - ContAudITWrapper#9 - Analyzing current environment state...
+2024-10-11 09:03:17,800 INFO - ContAudITWrapper#9 - Saving current environment state...
+2024-10-11 09:03:17,801 INFO - ContAudITWrapper#9 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:03:17,801 INFO - ContAudITWrapper#9 - Executing command...
+2024-10-11 09:03:19,278 INFO - ContAudITWrapper#9 - Command output: 
+2024-10-11 09:03:17.804989004 [executor] Initializing the workflow...
+[vim_workflow] Checking operating system...
+[vim_workflow] Detected Amazon Linux.
+[vim_workflow] Checking if vim is installed...
+[vim_workflow] Vim not found! Installing...
+Last metadata expiration check: 5:06:28 ago on Fri Oct 11 03:56:50 2024.
+Dependencies resolved.
+================================================================================
+ Package          Arch       Version                      Repository       Size
+================================================================================
+Installing:
+ vim-enhanced     x86_64     2:9.0.2153-1.amzn2023        amazonlinux     1.9 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.9 M
+Installed size: 4.0 M
+Downloading Packages:
+vim-enhanced-9.0.2153-1.amzn2023.x86_64.rpm      29 MB/s | 1.9 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            16 MB/s | 1.9 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+  Running scriptlet: vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+  Verifying        : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+
+Installed:
+  vim-enhanced-2:9.0.2153-1.amzn2023.x86_64                                     
+
+Complete!
+2024-10-11 09:03:19.277985089 [executor] Finished!
+
+2024-10-11 09:03:19,278 INFO - ContAudITWrapper#9 - Running post-command actions...
+2024-10-11 09:03:19,278 INFO - ContAudITWrapper#9 - Analyzing current environment state...
+2024-10-11 09:03:19,282 INFO - ContAudITWrapper#9 - Saving current environment state...
+2024-10-11 09:03:19,283 INFO - ContAudITWrapper#9 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:03:19,283 INFO - ContAudITWrapper#9 - Checking environment diff...
+2024-10-11 09:03:19,286 INFO - ContAudITWrapper#9 - Environment diff: 
+2024-10-11 09:03:19,286 INFO - ContAudITWrapper#9 - Cleaning temporary files...
+2024-10-11 09:03:19,290 INFO - ContAudITWrapper#9 - Sending to blockchain...
+Oct 11, 2024 9:03:19 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 09:03:21,904 INFO - ContAudITWrapper#9 - Response 
+2024-10-11 09:03:21,905 INFO - ContAudITWrapper#9 - Finishing ContAudIT Wrapper...
+
+real	0m10.625s
+user	0m13.278s
+sys	0m0.688s
+Thread: 9

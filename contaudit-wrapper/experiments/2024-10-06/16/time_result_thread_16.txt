@@ -1,0 +1,67 @@
+2024-10-11 09:04:31,936 INFO - ContAudITWrapper#16 - Initializing ContAudIT Wrapper...
+2024-10-11 09:04:31,945 INFO - ContAudITWrapper#16 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 09:04:34,128 INFO - ContAudITWrapper#16 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 09:04:34,134 INFO - ContAudITWrapper#16 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+2024-10-11 09:04:36,484 INFO - ContAudITWrapper#16 - Response true
+2024-10-11 09:04:36,490 INFO - ContAudITWrapper#16 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 09:04:36,491 INFO - ContAudITWrapper#16 - Validating Application...
+2024-10-11 09:04:37,052 INFO - ContAudITWrapper#16 - Response true
+2024-10-11 09:04:37,054 INFO - ContAudITWrapper#16 - Artifact vim.workflow hash: c2cd8e965b29c5d0c1074b5d083f6beb66f185746aced776659b092dece12743
+2024-10-11 09:04:37,058 INFO - ContAudITWrapper#16 - Validating Artifact...
+2024-10-11 09:04:37,592 INFO - ContAudITWrapper#16 - Response true
+2024-10-11 09:04:37,593 INFO - ContAudITWrapper#16 - Running pre-command actions...
+2024-10-11 09:04:37,593 INFO - ContAudITWrapper#16 - Analyzing current environment state...
+2024-10-11 09:04:37,654 INFO - ContAudITWrapper#16 - Saving current environment state...
+2024-10-11 09:04:37,655 INFO - ContAudITWrapper#16 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:04:37,655 INFO - ContAudITWrapper#16 - Executing command...
+2024-10-11 09:04:38,602 INFO - ContAudITWrapper#16 - Command output: 
+2024-10-11 09:04:37.660376313 [executor] Initializing the workflow...
+[vim_workflow] Checking operating system...
+[vim_workflow] Detected Amazon Linux.
+[vim_workflow] Checking if vim is installed...
+[vim_workflow] Vim found! Removing...
+Dependencies resolved.
+================================================================================
+ Package          Arch       Version                     Repository        Size
+================================================================================
+Removing:
+ vim-enhanced     x86_64     2:9.0.2153-1.amzn2023       @amazonlinux     4.0 M
+
+Transaction Summary
+================================================================================
+Remove  1 Package
+
+Freed space: 4.0 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Erasing          : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+  Verifying        : vim-enhanced-2:9.0.2153-1.amzn2023.x86_64              1/1 
+
+Removed:
+  vim-enhanced-2:9.0.2153-1.amzn2023.x86_64                                     
+
+Complete!
+2024-10-11 09:04:38.602055509 [executor] Finished!
+
+2024-10-11 09:04:38,602 INFO - ContAudITWrapper#16 - Running post-command actions...
+2024-10-11 09:04:38,602 INFO - ContAudITWrapper#16 - Analyzing current environment state...
+2024-10-11 09:04:38,608 INFO - ContAudITWrapper#16 - Saving current environment state...
+2024-10-11 09:04:38,608 INFO - ContAudITWrapper#16 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 09:04:38,608 INFO - ContAudITWrapper#16 - Checking environment diff...
+2024-10-11 09:04:38,611 INFO - ContAudITWrapper#16 - Environment diff: 
+2024-10-11 09:04:38,611 INFO - ContAudITWrapper#16 - Cleaning temporary files...
+2024-10-11 09:04:38,614 INFO - ContAudITWrapper#16 - Sending to blockchain...
+Oct 11, 2024 9:04:39 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 09:04:41,236 INFO - ContAudITWrapper#16 - Response 
+2024-10-11 09:04:41,237 INFO - ContAudITWrapper#16 - Finishing ContAudIT Wrapper...
+
+real	0m10.022s
+user	0m12.712s
+sys	0m0.838s
+Thread: 16

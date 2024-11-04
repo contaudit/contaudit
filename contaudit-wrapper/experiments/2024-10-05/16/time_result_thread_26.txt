@@ -1,0 +1,73 @@
+2024-10-11 05:08:06,444 INFO - ContAudITWrapper#26 - Initializing ContAudIT Wrapper...
+2024-10-11 05:08:06,645 INFO - ContAudITWrapper#26 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 05:08:32,017 INFO - ContAudITWrapper#26 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 05:08:32,184 INFO - ContAudITWrapper#26 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+Oct 11, 2024 5:09:31 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:09:36 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:09:42,527 INFO - ContAudITWrapper#26 - Response true
+2024-10-11 05:09:42,687 INFO - ContAudITWrapper#26 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 05:09:42,688 INFO - ContAudITWrapper#26 - Validating Application...
+Oct 11, 2024 5:09:46 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:09:49 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export metrics. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:09:51 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:09:57,585 INFO - ContAudITWrapper#26 - Response true
+2024-10-11 05:09:57,588 INFO - ContAudITWrapper#26 - Artifact apache2.workflow hash: bdb4cee855e21446b6ae53ddcb76a1632ef8c4545b5db0517e01ffd552157f6e
+2024-10-11 05:09:57,672 INFO - ContAudITWrapper#26 - Validating Artifact...
+Oct 11, 2024 5:10:01 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:10:06,332 INFO - ContAudITWrapper#26 - Response true
+2024-10-11 05:10:06,348 INFO - ContAudITWrapper#26 - Running pre-command actions...
+2024-10-11 05:10:06,354 INFO - ContAudITWrapper#26 - Analyzing current environment state...
+%d [%thread] %-5level %logger - %msg%n java.lang.NullPointerException: Cannot invoke "org.hyperledger.fabric.sdk.HFClient.getExecutorService()" because "this.client" is null
+	at org.hyperledger.fabric.sdk.Channel.lambda$startEventQue$13(Channel.java:5954) ~[contaudit-wrapper.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-11 05:10:06,534 INFO - ContAudITWrapper#26 - Saving current environment state...
+2024-10-11 05:10:06,535 INFO - ContAudITWrapper#26 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:10:06,535 INFO - ContAudITWrapper#26 - Executing command...
+Oct 11, 2024 5:10:06 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:10:07,782 INFO - ContAudITWrapper#26 - Command output: 
+2024-10-11 05:10:06.631488664 [executor] Initializing the workflow...
+[apache2_workflow] Apache HTTP Server already installed.
+[apache2_workflow] UserDir module already loaded.
+[apache2_workflow] Configs to UserDir already exist.
+[apache2_workflow] public_html directory already exists in /home/ec2-user.
+[apache2_workflow] Creating a simple webpage...
+[apache2_workflow] Moving webpage to Apache HTTP Server user website folder...
+[apache2_workflow] Page moved successfully!
+2024-10-11 05:10:07.780288756 [executor] Finished!
+
+2024-10-11 05:10:07,783 INFO - ContAudITWrapper#26 - Running post-command actions...
+2024-10-11 05:10:07,783 INFO - ContAudITWrapper#26 - Analyzing current environment state...
+2024-10-11 05:10:07,886 INFO - ContAudITWrapper#26 - Saving current environment state...
+2024-10-11 05:10:07,887 INFO - ContAudITWrapper#26 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:10:07,887 INFO - ContAudITWrapper#26 - Checking environment diff...
+2024-10-11 05:10:07,938 INFO - ContAudITWrapper#26 - Environment diff: 
+2024-10-11 05:10:07,938 INFO - ContAudITWrapper#26 - Cleaning temporary files...
+2024-10-11 05:10:08,083 INFO - ContAudITWrapper#26 - Sending to blockchain...
+Oct 11, 2024 5:10:11 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:10:16 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:10:18,486 INFO - ContAudITWrapper#26 - Response 
+2024-10-11 05:10:18,488 INFO - ContAudITWrapper#26 - Finishing ContAudIT Wrapper...
+%d [%thread] %-5level %logger - %msg%n java.lang.NullPointerException: Cannot invoke "org.hyperledger.fabric.sdk.HFClient.getExecutorService()" because "this.client" is null
+	at org.hyperledger.fabric.sdk.Channel.lambda$startEventQue$13(Channel.java:5954) ~[contaudit-wrapper.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:842) [?:?]
+Oct 11, 2024 5:10:18 AM io.opentelemetry.sdk.internal.ThrottlingLogger log
+WARNING: Too many log messages detected. Will only log once per minute from now on.
+
+real	2m19.612s
+user	0m21.522s
+sys	0m0.882s
+Thread: 26

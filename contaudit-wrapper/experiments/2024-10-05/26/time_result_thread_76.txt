@@ -1,0 +1,71 @@
+2024-10-11 05:32:18,959 INFO - ContAudITWrapper#76 - Initializing ContAudIT Wrapper...
+2024-10-11 05:32:19,177 INFO - ContAudITWrapper#76 - Current directory: /home/ec2-user/Code/ufrgs-poc/contaudit-wrapper.jar
+2024-10-11 05:32:43,985 INFO - ContAudITWrapper#76 - Wrapper hash: b7519188ed863d76e5199a8d880bb968bdf9124fad53b871583787e123a7a764
+2024-10-11 05:32:44,077 INFO - ContAudITWrapper#76 - Validating Wrapper...
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+Oct 11, 2024 5:33:42 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:33:47 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:33:57,102 INFO - ContAudITWrapper#76 - Response true
+Oct 11, 2024 5:33:57 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+%d [%thread] %-5level %logger - %msg%n java.lang.NullPointerException: Cannot invoke "org.hyperledger.fabric.sdk.HFClient.getExecutorService()" because "this.client" is null
+	at org.hyperledger.fabric.sdk.Channel.lambda$startEventQue$13(Channel.java:5954) ~[contaudit-wrapper.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:842) [?:?]
+%d [%thread] %-5level %logger - %msg%n java.lang.NullPointerException: Cannot invoke "org.hyperledger.fabric.sdk.HFClient.getExecutorService()" because "this.client" is null
+	at org.hyperledger.fabric.sdk.Channel.lambda$startEventQue$13(Channel.java:5954) ~[contaudit-wrapper.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-11 05:33:57,390 INFO - ContAudITWrapper#76 - Application hash: e36ee2d35f8c4c41bd358782dfb3ac8852b40439d350ff27616f0c18819ce9bf
+2024-10-11 05:33:57,414 INFO - ContAudITWrapper#76 - Validating Application...
+Oct 11, 2024 5:34:00 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export metrics. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:34:02 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:34:07 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:34:13,433 INFO - ContAudITWrapper#76 - Response true
+2024-10-11 05:34:13,444 INFO - ContAudITWrapper#76 - Artifact apache2.workflow hash: bdb4cee855e21446b6ae53ddcb76a1632ef8c4545b5db0517e01ffd552157f6e
+2024-10-11 05:34:13,547 INFO - ContAudITWrapper#76 - Validating Artifact...
+Oct 11, 2024 5:34:17 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+Oct 11, 2024 5:34:22 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:34:28,843 INFO - ContAudITWrapper#76 - Response true
+2024-10-11 05:34:28,853 INFO - ContAudITWrapper#76 - Running pre-command actions...
+2024-10-11 05:34:28,854 INFO - ContAudITWrapper#76 - Analyzing current environment state...
+2024-10-11 05:34:29,034 INFO - ContAudITWrapper#76 - Saving current environment state...
+2024-10-11 05:34:29,035 INFO - ContAudITWrapper#76 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:34:29,035 INFO - ContAudITWrapper#76 - Executing command...
+2024-10-11 05:34:29,864 INFO - ContAudITWrapper#76 - Command output: 
+2024-10-11 05:34:29.200883369 [executor] Initializing the workflow...
+[apache2_workflow] Apache HTTP Server already installed.
+[apache2_workflow] UserDir module already loaded.
+[apache2_workflow] Configs to UserDir already exist.
+[apache2_workflow] public_html directory already exists in /home/ec2-user.
+[apache2_workflow] Creating a simple webpage...
+[apache2_workflow] Moving webpage to Apache HTTP Server user website folder...
+[apache2_workflow] Page moved successfully!
+2024-10-11 05:34:29.862283228 [executor] Finished!
+
+2024-10-11 05:34:29,864 INFO - ContAudITWrapper#76 - Running post-command actions...
+2024-10-11 05:34:29,865 INFO - ContAudITWrapper#76 - Analyzing current environment state...
+2024-10-11 05:34:30,054 INFO - ContAudITWrapper#76 - Saving current environment state...
+2024-10-11 05:34:30,055 INFO - ContAudITWrapper#76 - Environment state hash: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+2024-10-11 05:34:30,055 INFO - ContAudITWrapper#76 - Checking environment diff...
+2024-10-11 05:34:30,283 INFO - ContAudITWrapper#76 - Environment diff: 
+2024-10-11 05:34:30,283 INFO - ContAudITWrapper#76 - Cleaning temporary files...
+2024-10-11 05:34:30,407 INFO - ContAudITWrapper#76 - Sending to blockchain...
+Oct 11, 2024 5:34:32 AM io.opentelemetry.sdk.internal.ThrottlingLogger doLog
+WARNING: Failed to export spans. Server responded with gRPC status code 2. Error message: Failed to connect to localhost/127.0.0.1:4317
+2024-10-11 05:34:36,472 INFO - ContAudITWrapper#76 - Response 
+2024-10-11 05:34:36,473 INFO - ContAudITWrapper#76 - Finishing ContAudIT Wrapper...
+
+real	2m25.372s
+user	0m22.056s
+sys	0m1.143s
+Thread: 76
