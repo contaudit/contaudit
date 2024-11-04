@@ -4,3 +4,5 @@ vars
 /*.jar
 /*_state.txt
 /*.log
+/time_result_thread_*.txt
+/experiment_*.jsonl

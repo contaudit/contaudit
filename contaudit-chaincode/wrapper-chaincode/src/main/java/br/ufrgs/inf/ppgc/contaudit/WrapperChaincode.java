@@ -8,7 +8,6 @@ package br.ufrgs.inf.ppgc.contaudit;
 import java.io.IOException;
 import java.security.cert.CertificateException;
 import java.util.List;
-
 import io.netty.handler.ssl.OpenSsl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,8 +18,14 @@ import org.hyperledger.fabric.shim.ResponseUtils;
 import org.json.JSONException;
 
 public class WrapperChaincode extends ChaincodeBase {
-    private static Log logger = LogFactory.getLog(WrapperChaincode.class);
-    private static final String WRAPPER_HASH_KEY = "WRAPPER_HASH";
+    protected static final Log logger = LogFactory.getLog(WrapperChaincode.class);
+    protected static final String WRAPPER_HASH_KEY = "WRAPPER_HASH";
+    protected static final String ORGANIZATION = "auditor-contaudit-ppgc-inf-ufrgs-br";
+    protected ClientIdentity clientIdentity;
+
+    public WrapperChaincode(ClientIdentity clientIdentity) {
+        this.clientIdentity = clientIdentity;
+    }
 
     @Override
     public Response init(ChaincodeStub stub) {
@@ -31,70 +36,100 @@ public class WrapperChaincode extends ChaincodeBase {
     public Response invoke(ChaincodeStub stub) {
         try {
             logger.info("Invoking Wrapper Chaincode...");
-            String func = stub.getFunction();
+            String function = stub.getFunction();
             List<String> params = stub.getParameters();
-            if (func.equals("getHash")) {
-                return getHash(stub);
+
+            if (clientIdentity == null) {
+                clientIdentity = createClientIdentity(stub);
             }
-            if (func.equals("updateHash")) {
-                return updateHash(stub, params);
+
+            switch (function) {
+                case "getHash":
+                    return getHash(stub, clientIdentity);
+                case "updateHash":
+                    return updateHash(stub, params, clientIdentity);
+                case "validateHash":
+                    return validateHash(stub, params);
+                default:
+                    return ResponseUtils.newErrorResponse("Invalid invoke function name. Expecting one of: [\"getHash\", \"updateHash\", \"validateHash\"]");
             }
-            if (func.equals("validateHash")) {
-                return validateHash(stub, params);
-            }
-            return ResponseUtils.newErrorResponse("Invalid invoke function name. Expecting one of: [\"updateHash\", \"validateHash\"]");
         } catch (Exception e) {
+            logger.error("Error invoking WrapperChaincode", e);
             return ResponseUtils.newErrorResponse(e);
         }
     }
 
-    // get the wrapper hash on blockchain
-    private Response getHash(ChaincodeStub stub) throws CertificateException, JSONException, IOException {
-        String transactionOrganization = new ClientIdentity(stub).getMSPID();
-        if (!transactionOrganization.equals("auditor-contaudit-ppgc-inf-ufrgs-br"))
-            return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", transactionOrganization));   
+    protected Response getHash(ChaincodeStub stub, ClientIdentity identity) {
+        try {
+            if (!isAuthorized(identity)) {
+                return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", identity.getMSPID()));
+            }
 
-        logger.info("Checking hash...");
-        String hashValue = stub.getStringState(WRAPPER_HASH_KEY);
+            logger.info("Fetching Wrapper hash...");
+            String hashValue = stub.getStringState(WRAPPER_HASH_KEY);
 
-        return ResponseUtils.newSuccessResponse("Wrapper hash.", hashValue.getBytes());
-    }
+            if (hashValue == null || hashValue.isEmpty()) {
+                return ResponseUtils.newErrorResponse("Wrapper hash not found.");
+            }
 
-    // Update the wrapper hash on blockchain
-    private Response updateHash(ChaincodeStub stub, List<String> args) throws CertificateException, JSONException, IOException {
-        String transactionOrganization = new ClientIdentity(stub).getMSPID();
-        if (!transactionOrganization.equals("auditor-contaudit-ppgc-inf-ufrgs-br"))
-            return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", transactionOrganization));   
-
-        if (args.size() != 1)
-            return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting a wrapper hash.");
-
-        logger.info("Updating Wrapper hash...");
-        String wrapperHash = args.get(0);
-        stub.putStringState(WRAPPER_HASH_KEY, wrapperHash);
-
-        logger.info("Wrapper Hash updated!");
-        return ResponseUtils.newSuccessResponse();
-    }
-
-    // validate an wrapper hash on blockchain
-    private Response validateHash(ChaincodeStub stub, List<String> args) {
-        if (args.size() != 1)
-            return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting only a hash string.");
-        
-        logger.info("Checking hash...");
-        String hashParam = args.get(0);
-        String hashValue = stub.getStringState(WRAPPER_HASH_KEY);
-
-        if (hashParam.equals(hashValue)) {
-            return ResponseUtils.newSuccessResponse("Valid wrapper hash.", "true".getBytes());
-        } else {
-            return ResponseUtils.newSuccessResponse("Invalid wrapper hash.", "false".getBytes());
+            logger.info("Wrapper hash found: " + hashValue);
+            return ResponseUtils.newSuccessResponse("Wrapper hash.", hashValue.getBytes());
+        } catch (Exception e) {
+            logger.error("Error during getHash operation", e);
+            return ResponseUtils.newErrorResponse("Error during getHash operation.");
         }
     }
 
+    protected Response updateHash(ChaincodeStub stub, List<String> args, ClientIdentity identity) {
+        try {
+            if (!isAuthorized(identity)) {
+                return ResponseUtils.newErrorResponse("Access Denied for organization.");
+            }
+
+            if (args.size() != 1) {
+                return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting a wrapper hash.");
+            }
+
+            String wrapperHash = args.get(0);
+            logger.info("Updating Wrapper hash: " + wrapperHash);
+            stub.putStringState(WRAPPER_HASH_KEY, wrapperHash);
+
+            logger.info("Wrapper hash updated successfully.");
+            return ResponseUtils.newSuccessResponse();
+        } catch (Exception e) {
+            logger.error("Error during updateHash operation", e);
+            return ResponseUtils.newErrorResponse("Error during updateHash operation.");
+        }
+    }
+
+    protected Response validateHash(ChaincodeStub stub, List<String> args) {
+        try {
+            if (args.size() != 1) {
+                return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting only a hash string.");
+            }
+
+            String hashParam = args.get(0);
+            String storedHash = stub.getStringState(WRAPPER_HASH_KEY);
+
+            boolean isValid = hashParam.equals(storedHash);
+            logger.info("Validation result for hash: " + isValid);
+            return ResponseUtils.newSuccessResponse(isValid ? "Valid wrapper hash." : "Invalid wrapper hash.", Boolean.toString(isValid).getBytes());
+        } catch (Exception e) {
+            logger.error("Error during validateHash operation", e);
+            return ResponseUtils.newErrorResponse("Error during validateHash operation.");
+        }
+    }
+
+    protected boolean isAuthorized(ClientIdentity identity) throws JSONException {
+        return ORGANIZATION.equals(identity.getMSPID());
+    }
+
+    protected ClientIdentity createClientIdentity(ChaincodeStub stub) throws CertificateException, JSONException, IOException {
+        return new ClientIdentity(stub);
+    }
+
     public static void main(String[] args) {
-        logger.info("OpenSSL avaliable: " + OpenSsl.isAvailable());
-        new WrapperChaincode().start(args);
+        logger.info("OpenSSL available: " + OpenSsl.isAvailable());
+        new WrapperChaincode(null).start(args);
     }
 }

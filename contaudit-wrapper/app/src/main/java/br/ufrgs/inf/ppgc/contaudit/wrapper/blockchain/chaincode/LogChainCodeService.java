@@ -1,25 +1,19 @@
 package br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.chaincode;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 import com.google.gson.Gson;
-
 import br.ufrgs.inf.ppgc.contaudit.wrapper.blockchain.BlockchainService;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.log.Log;
 
 public class LogChainCodeService {
-    private BlockchainService blockchain;
+    private static final String CHANNEL_NAME = "c1";
+    private static final String CHAINCHODE_NAME = "log-chaincode";
+    protected BlockchainService blockchainService;
 
-    public LogChainCodeService() throws IOException, URISyntaxException{
-        blockchain = new BlockchainService();
+    public LogChainCodeService(BlockchainService blockchain) {
+        this.blockchainService = blockchain;
     }
 
     public void insertLog(Log log){
-        String channelName = "c1";
-        String chaincodeName = "log-chaincode";
-        String transactionName = "insert";
-
-        blockchain.submitTransaction(channelName, chaincodeName, transactionName, new String[] { log.getId(), new Gson().toJson(log) });
+        this.blockchainService.submitTransaction(CHANNEL_NAME, CHAINCHODE_NAME, "insert", new String[] { log.getId(), new Gson().toJson(log) });
     }
 }

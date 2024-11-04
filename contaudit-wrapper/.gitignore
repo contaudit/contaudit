@@ -2,6 +2,7 @@
 app/.gradle
 app/build/
 app/bin/
+app/*.log
 gradle
 *.mp4
 *.mkv

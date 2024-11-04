@@ -6,6 +6,7 @@ public class Artifact {
     private UUID id;
     private String application;
     private String name;
+    private String fullPath;
     private String hash;
     private String content;
 
@@ -33,6 +34,14 @@ public class Artifact {
         this.name = name;
     }
 
+    public String getFullPath() {
+        return this.fullPath;
+    }
+
+    public void setFullPath(String fullPath) {
+        this.fullPath = fullPath;
+    }
+
     public String getHash() {
         return this.hash;
     }
@@ -51,6 +60,6 @@ public class Artifact {
 
     @Override
     public String toString() {
-        return "Artifact{id=" + this.id + ", applicationVersion=" + this.application + ", name = " + this.name + ", hash = " + this.hash + ", content = " + this.content + "}";
+        return "Artifact{id=" + this.id + ", applicationVersion=" + this.application + ", name = " + this.name + ", fullPath = " + this.fullPath + ", hash = " + this.hash + ", content = " + this.content + "}";
     }
 }

@@ -2,7 +2,6 @@ package br.ufrgs.inf.ppgc.contaudit.wrapper.log;
 
 import java.util.Date;
 import java.util.List;
-
 import br.ufrgs.inf.ppgc.contaudit.wrapper.Utils;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.application.artifact.Artifact;

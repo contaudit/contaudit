@@ -10,7 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.concurrent.TimeoutException;
-
 import org.hyperledger.fabric.gateway.Contract;
 import org.hyperledger.fabric.gateway.ContractException;
 import org.hyperledger.fabric.gateway.Gateway;
@@ -18,16 +17,15 @@ import org.hyperledger.fabric.gateway.Network;
 import org.hyperledger.fabric.gateway.Transaction;
 import org.hyperledger.fabric.gateway.Wallet;
 import org.hyperledger.fabric.gateway.Wallets;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BlockchainService {
-    private Logger logger = LoggerFactory.getLogger(BlockchainService.class);
-    private String walletDir;
-    private String networkConfigFileDir;
-    private String identityName;
-    private Gateway.Builder builder;
+    protected Logger logger = LoggerFactory.getLogger(BlockchainService.class);
+    protected String walletDir;
+    protected String networkConfigFileDir;
+    protected String identityName;
+    protected Gateway.Builder builder;
 
     public BlockchainService() throws IOException, URISyntaxException {
         this.initConfigProperties();
@@ -42,7 +40,7 @@ public class BlockchainService {
         return this.sendTransaction("evaluate", channelName, chaincodeName, transactionName, args);
     }
 
-    private String sendTransaction(String action, String channelName, String chaincodeName, String transactionName, String[] args) {
+    protected String sendTransaction(String action, String channelName, String chaincodeName, String transactionName, String[] args) {
         // Create a gateway connection
         try (Gateway gateway = builder.connect()) {
             // Obtain the network through channel
@@ -70,7 +68,7 @@ public class BlockchainService {
         }
     }
 
-    private Gateway.Builder configGateway() {
+    protected Gateway.Builder configGateway() {
         try {
             // Load an existing wallet holding identities used to access the network.
             Path walletPath = Paths.get(walletDir);
@@ -92,7 +90,7 @@ public class BlockchainService {
         }
     }
 
-    private void initConfigProperties() throws IOException, URISyntaxException {
+    protected void initConfigProperties() throws IOException, URISyntaxException {
         String currentDirectory = new File(BlockchainService.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
         String systemFileSeparator = System.getProperty("file.separator");
 

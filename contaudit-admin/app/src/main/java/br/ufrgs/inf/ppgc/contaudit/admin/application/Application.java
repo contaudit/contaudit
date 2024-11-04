@@ -1,12 +1,12 @@
 package br.ufrgs.inf.ppgc.contaudit.admin.application;
 
-import java.io.Serializable;
 import java.util.UUID;
 
-public class Application implements Serializable {
+public class Application {
     private UUID id;
     private String name;
     private String version;
+    private String fullPath;
     private String hash;
 
     public UUID getId() {
@@ -33,6 +33,14 @@ public class Application implements Serializable {
         this.version = version;
     }
 
+    public String getFullPath() {
+        return this.fullPath;
+    }
+
+    public void setFullPath(String fullPath) {
+        this.fullPath = fullPath;
+    }
+
     public String getHash() {
         return this.hash;
     }
@@ -43,6 +51,6 @@ public class Application implements Serializable {
 
     @Override
     public String toString() {
-        return "Application{id=" + this.id + ", name = " + this.name + ", version = " + this.version + ", hash = " + this.hash + "}";
+        return "Application{id=" + this.id + ", name = " + this.name + ", version = " + this.version + ", fullPath = " + this.fullPath + ", hash = " + this.hash + "}";
     }
 }

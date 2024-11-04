@@ -1,60 +1,70 @@
-# ContAudIT - Uma Abordagem de Auditoria Contínua com Blockchain para Gerenciamento de Mudanças em TI
+# ContAudIT: Continuous Auditing in IT Change Management Using Blockchain
 
-Este projeto está organizado em cinco pastas:
+[Clique aqui para acessar a versão em Português do Brasil.](README_PT_BR.md)
 
-- [**contaudit-chaincode**](contaudit-chaincode/) - Projeto múltiplo de contratos inteligentes utilizados na blockchain do experimento. 
+This project is organized into five folders:
 
-- [**contaudit-admin**](contaudit-admin/) - Projeto de aplicativo cliente utilizado pelas auditorias do experimento para configuração da blockchain. 
+- [**contaudit-chaincode**](contaudit-chaincode/) - Multiple project of smart contracts used in the experiment blockchain.
 
-- [**contaudit-wrapper**](contaudit-wrapper/) - Projeto de aplicativo cliente utilizado pelas organizações auditadas do experimento.
+- [**contaudit-admin**](contaudit-admin/) - Client application project used by the audit to configure the blockchain in the experiment.
 
-- [**contaudit-samples**](contaudit-samples/) - Repositório de ferramentas e artefatos de exemplo usados pelas organizações auditadas do experimento.
+- [**contaudit-wrapper**](contaudit-wrapper/) - Client application project used by the audited organizations in the experiment.
 
-- [**contaudit-checker**](contaudit-checker/) - Projeto de aplicativo cliente utilizado pelas auditorias do experimento para análises em auditorias em curso.
+- [**contaudit-samples**](contaudit-samples/) - Repository of example tools and artifacts used by audited organizations in the the experiment.
 
-## Pré-Requisitos
+- [**contaudit-checker**](contaudit-checker/) - Client application project used by the audit for analysis in ongoing audits in the experiment.
 
-[Minifabric 2.3+](https://github.com/hyperledger-labs/minifabric)
+## Prerequisites
+
+[Git](https://git-scm.com)
+
+[Docker](https://www.docker.com)
+
+[Minifabric 2.3](https://github.com/hyperledger-labs/minifabric)
 
 [Java 17](https://www.oracle.com/java/technologies/downloads/#java17)
 
 [Gradle 7.0](https://gradle.org/next-steps/?version=7.0&format=bin)
 
-## Começando
+[Python](https://www.python.org)
 
-> **Importante**: Execute todos os comandos abaixo no diretório de trabalho local deste repositório.
+[R](https://www.r-project.org)
 
-> **Importante**: Todos os comandos abaixo foram testados apenas em sistemas Linux/Debian.
+## Getting Started
 
-### 1. Configurando a Blockchain
+> **Important**: Run all the commands below in the local working directory of this repository.
 
-#### 1.1 Inicializando a rede Blockchain
+> **Important**: All commands below have been tested on Linux/Debian systems only.
 
-Uma vez que você tenha configurado a ferramenta Minifabric em seu ambiente, inicialize a rede com o comando abaixo.
+### 1. Setting up the Blockchain
+
+#### 1.1 Initializing the Blockchain Network
+
+Once you have configured the Minifabric tool in your environment, initialize the network with the command below.
 
 ```
 minifab up -e true -o auditor.contaudit.ppgc.inf.ufrgs.br -c c1
 ```
 
-#### 1.2. Inicializando a ferramenta Hyperledger Explorer
+#### 1.2. Launching the Hyperledger Explorer tool
 
-Uma vez que a rede Minifabric esteja online, pode ser interessante inicializar a ferramenta Hyperledger Explorer para ter uma visibilidade dos componentes da rede, bem como das suas transações.Para isso, execute o comando abaixo.
+Once the Minifabric network is online, it may be interesting to launch the Hyperledger Explorer tool to gain visibility into the network components as well as their transactions. To do this, run the command below.
 
 ```
 minifab explorerup
 ```
 
-#### 1.3. Extrair arquivos de configuração da rede Blockchain
+#### 1.3. Extract Blockchain Network Configuration Files
 
-Para configurar outros clientes de interação com a blockchain, devemos extrair o arquivo compactado fornecido pelo Minifabric, onde estão os arquivos de configuração e identidades dos membros da rede. Para isso, execute o comando abaixo.
+To configure other clients to interact with the blockchain, we must extract the compressed file provided by Minifabric, which contains the configuration files and identities of the network members. To do this, run the command below.
 
 ```
 tar -xvf ./vars/vscode.tgz --directory ./vars
 ```
 
-#### 1.4. Preparar contratos inteligentes para instalação na rede Blockchain
+#### 1.4. Preparing smart contracts for installation on the Blockchain network
 
-Neste momento, precisamos copiar os contratos inteligentes utilizados no experimento para dentro da estrutura do Minifabric, de modo que possamos instalá-los em seguida. Para isso, execute o comando abaixo.
+At this point, we need to copy the smart contracts used in the experiment into the Minifabric framework so that we can install them later. To do this, run the command below.
 
 ```
 for chaincodeFiles in $(ls -d ./contaudit-chaincode/*/ | cut -d "/" -f 3 | awk '{print}'); 
@@ -63,9 +73,9 @@ do
 done
 ```
 
-#### 1.5. Instalar contratos inteligentes na rede Blockchain
+#### 1.5. Install Smart Contracts on the Blockchain Network
 
-Finalmente, precisamos instalar os contratos inteligentes na Blockchain. Para isso, execute o comando abaixo.
+Finally, we need to install the smart contracts on the Blockchain. To do this, run the command below.
 
 ```
 for chaincode in $(ls -d ./contaudit-chaincode/*/ | cut -d "/" -f 3 | awk '{print}'); 
@@ -74,77 +84,72 @@ do
 done
 ```
 
-### 2. Usando o Agente da Auditoria (Wrapper)
+### 2. Using the Audit Agent (Wrapper)
 
-Para utilizar o Wrapper nas organizações auditadas, execute o comando abaixo alterando os parâmetros entre aspas duplas para o endereço da ferramenta à ser executada e os artefatos utilizados pela mesma, respectivamente.
+To use the Wrapper in audited organizations, run the command below, changing the parameters in double quotes to the address of the tool to be executed and the artifacts used by it, respectively.
 
 ```
 java -jar ./contaudit-wrapper.jar "ExecID" "./contaudit-samples/executor/executor ./contaudit-samples/executor/artifacts/apache.workflow"
 ```
 
-### 3. Experimento 1
+### 3. Reproducing the Experiments
 
-Para reproduzir o primeiro experimento, execute o oomando abaixo.
+#### 3.1. Experiment 1 and 2
 
-```
-sh ./contaudit-samples/executor/execute-all-workflows.sh
-```
-
-### 4. Experimento 2
-
-Para reproduzir o segundo experimento, execute o oomando abaixo.
+To reproduce the first and second experiment, run the command below.
 
 ```
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 1 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 2 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 3 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 4 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 5 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 6 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 7 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 8 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 9 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 10 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 11 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 12 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 13 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 14 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 15 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 16 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 17 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 18 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 19 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 20 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 21 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 22 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 23 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 24 &
-sh ./contaudit-samples/executor/execute-multiple-apache2-workflows.sh 25
+sh ./experiment_1_and_2.sh "2024-09-29" "execute-multiple-apache2-workflows-with-stats" 100 5 --commit
+sh ./experiment_1_and_2.sh "2024-09-29-2" "execute-multiple-user-workflows-with-stats" 100 5 --commit
 ```
 
-## Solução de Problemas
+#### 3.2. Experiment 3
 
-Caso você se depare com erros desconhecidos na interação com o Minifabric, recomendamos uma reconfiguração do ambiente. Abaixo alguns comandos que podem ajudar nesse processo.
+To reproduce the third experiment, run the command below.
 
-### 1. Limpar chaincodes existentes no Minifabric
+```
+sh ./experiment_3.sh "2024-10-05" "execute-multiple-apache2-workflows" 30 --commit
+```
+
+#### 3.3. Experiment 4
+
+To reproduce the fourth experiment, run the command below.
+
+```
+sh ./experiment_4.sh "2024-10-06" "execute-one-workflow-with-stats" "vim.workflow" 30 --commit
+```
+
+#### 3.4. Experiment 5
+
+To reproduce the fifth experiment, run the command below.
+
+```
+sh ./experiment_5.sh "2024-10-12" "execute-one-workflow-with-stats" "digital_ocean_k3s.workflow" --commit
+```
+
+## Troubleshooting
+
+If you encounter unknown errors when interacting with Minifabric, we recommend reconfiguring the environment. Below are some commands that can help with this process.
+
+### 1. Clear existing chaincodes on Minifabric
 
 ```
 rm -r vars/chaincode/*-chaincode
 ```
 
-### 2. Limpar Minifabric
+### 2. Clean Minifabric
 
 ```
 minifab cleanup
 ```
 
-### 3. Reiniciar Docker
+### 3. Restart Docker
 
 ```
 sudo service docker restart
 ```
 
-### 4. Parar e Limpar Docker
+### 4. Stop and Clean Docker
 
 ```
 docker network prune -f &&
@@ -155,9 +160,9 @@ docker system prune -f &&
 docker kill $(docker ps -q)
 ```
 
-> OBS: Cuidado ao utilizar esse comando, pois todo o seu ambiente Docker será desligado e limpo!
+> NOTE: Be careful when using this command, as your entire Docker environment will be shut down and cleaned!
 
-### 5. Matar processos do Docker que estejam escutando portas na rede
+### 5. Kill Docker processes listening on network ports
 
 ```
 for pid in $(sudo netstat -tunlp | grep '.*docker' | cut -d "/" -f 1 | awk '{print $7}');
@@ -166,7 +171,7 @@ do
 done
 ```
 
-### 6. Limpar máquina virtual do Docker
+### 6. Clean up Docker virtual machine
 
 ```
 rm -f ~/.docker/desktop/vms/0/data/Docker.raw

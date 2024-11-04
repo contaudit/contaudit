@@ -1,8 +1,8 @@
 package br.ufrgs.inf.ppgc.contaudit.checker.log;
 
+import java.util.Date;
 import java.util.List;
-import java.util.UUID;
-
+import br.ufrgs.inf.ppgc.contaudit.checker.Utils;
 import br.ufrgs.inf.ppgc.contaudit.checker.application.Application;
 import br.ufrgs.inf.ppgc.contaudit.checker.application.artifact.Artifact;
 
@@ -17,7 +17,7 @@ public class Log {
     private String environmentDiff;
 
     public Log(String command, Application hashes, List<Artifact> artifacts, String environmentPreStateHash, String output, String environmentPostStateHash, String environmentDiff) {
-        this.id = UUID.randomUUID().toString();
+        this.id = Utils.dateFormatter().format(new Date());
         this.command = command;
         this.application = hashes;
         this.artifacts = artifacts;

@@ -1,14 +1,6 @@
-/*
-Copyright IBM Corp., DTCC All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
 package br.ufrgs.inf.ppgc.contaudit;
 
-import java.io.IOException;
-import java.security.cert.CertificateException;
 import java.util.List;
-
 import io.netty.handler.ssl.OpenSsl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,7 +15,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ApplicationChaincode extends ChaincodeBase {
-    private static Log logger = LogFactory.getLog(ApplicationChaincode.class);
+    protected static final Log logger = LogFactory.getLog(ApplicationChaincode.class);
+    protected static final String ORGANIZATION = "auditor-contaudit-ppgc-inf-ufrgs-br";
+    protected static final String START_KEY = "00000000-0000-0000-0000-0000000000";
+    protected static final String END_KEY = "zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzz";
 
     @Override
     public Response init(ChaincodeStub stub) {
@@ -34,93 +29,102 @@ public class ApplicationChaincode extends ChaincodeBase {
     public Response invoke(ChaincodeStub stub) {
         try {
             logger.info("Invoking Application Chaincode...");
-            String func = stub.getFunction();
+            String function = stub.getFunction();
             List<String> params = stub.getParameters();
-            if (func.equals("get")) {
-                return get(stub);
+            ClientIdentity identity = new ClientIdentity(stub);
+
+            switch (function) {
+                case "get":
+                    return get(stub, identity);
+                case "insert":
+                    return insert(stub, params, identity);
+                case "validateApplication":
+                    return validateApplication(stub, params);
+                default:
+                    return ResponseUtils.newErrorResponse("Invalid invoke function name. Expecting one of: [\"get\", \"insert\", \"validateApplication\"]");
             }
-            if (func.equals("insert")) {
-                return insert(stub, params);
-            }
-            if (func.equals("validateApplication")) {
-                return validateApplication(stub, params);
-            }
-            return ResponseUtils.newErrorResponse("Invalid invoke function name. Expecting one of: [\"insert\", \"validateApplication\"]");
         } catch (Exception e) {
+            logger.error("Error invoking chaincode", e);
             return ResponseUtils.newErrorResponse(e);
         }
     }
 
-    // list the aplications on blockchain
-    private Response get(ChaincodeStub stub) throws Exception {
-        String transactionOrganization = new ClientIdentity(stub).getMSPID();
-        if (!transactionOrganization.equals("auditor-contaudit-ppgc-inf-ufrgs-br"))
-            return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", transactionOrganization));   
-
-        String startKey = "00000000-0000-0000-0000-0000000000";
-        String endKey = "zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzz";
-        logger.info(String.format("Start key: %s. End key: %s.", startKey, endKey));
-
-        logger.info("Searching applications...");
-        QueryResultsIterator<KeyValue> results = stub.getStateByRange(startKey, endKey);
-        
-        JSONArray logsJSON = new JSONArray();
-        for (KeyValue result : results) {
-            try {
-                String logState = result.getStringValue();
-                JSONObject logJSON = new JSONObject(logState);
-                logsJSON.put(logJSON);
-            } catch (JSONException e) {
-                e.printStackTrace();
+    protected Response get(ChaincodeStub stub, ClientIdentity identity) {
+        try {
+            if (!isAuthorized(identity)) {
+                return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", identity.getMSPID()));
             }
-        }
-        results.close();
-        logger.info("Applications founded: " + logsJSON);
 
-        if (logsJSON.length() > 0) {
-            return ResponseUtils.newSuccessResponse("Applications founded.", logsJSON.toString().getBytes());
-        } else {
-            return ResponseUtils.newSuccessResponse("No applications founded.");
-        }    
+            logger.info(String.format("Start key: %s. End key: %s.", START_KEY, END_KEY));
+
+            JSONArray applications = new JSONArray();
+            QueryResultsIterator<KeyValue> results = null;
+
+            try {
+                results = stub.getStateByRange(START_KEY, END_KEY);
+
+                for (KeyValue result : results) {
+                    applications.put(new JSONObject(result.getStringValue()));
+                }
+            } finally {
+                if (results != null) {
+                    results.close();
+                }
+            }
+
+            if (applications.length() > 0) {
+                logger.info("Applications found: " + applications);
+                return ResponseUtils.newSuccessResponse("Applications found.", applications.toString().getBytes());
+            } else {
+                return ResponseUtils.newSuccessResponse("No applications found.");
+            }
+
+        } catch (Exception e) {
+            logger.error("Error during get operation", e);
+            return ResponseUtils.newErrorResponse("Error during get operation.");
+        }
     }
 
-    // insert an application on blockchain
-    private Response insert(ChaincodeStub stub, List<String> args) throws CertificateException, JSONException, IOException {
-        String transactionOrganization = new ClientIdentity(stub).getMSPID();
-        if (!transactionOrganization.equals("auditor-contaudit-ppgc-inf-ufrgs-br"))
-            return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", transactionOrganization));   
+    protected Response insert(ChaincodeStub stub, List<String> args, ClientIdentity identity) {
+        try {
+            if (!isAuthorized(identity)) {
+                return ResponseUtils.newErrorResponse(String.format("Access Denied for %s.", identity.getMSPID()));
+            }
 
-        if (args.size() != 2) {
-            return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting an application key and an application object.");
+            if (args.size() != 2) {
+                return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting an application key and an application object.");
+            }
+
+            String applicationKey = args.get(0);
+            String applicationObjString = args.get(1);
+            stub.putStringState(applicationKey, applicationObjString);
+
+            logger.info("Application saved!");
+            return ResponseUtils.newSuccessResponse();
+        } catch (Exception e) {
+            logger.error("Error during insert operation", e);
+            return ResponseUtils.newErrorResponse("Error during insert operation.");
         }
-
-        logger.info("Saving application...");
-        String applicationKey = args.get(0);
-        String applicationObjString = args.get(1);
-        stub.putStringState(applicationKey, applicationObjString);
-
-        logger.info("Application saved!");
-        return ResponseUtils.newSuccessResponse();
     }
 
-    // validate an application on blockchain
-    private Response validateApplication(ChaincodeStub stub, List<String> args) {
-        if (args.size() != 1)
+    protected Response validateApplication(ChaincodeStub stub, List<String> args) {
+        if (args.size() != 1) {
             return ResponseUtils.newErrorResponse("Incorrect number of arguments. Expecting only an application key.");
-        
-        logger.info("Checking application...");
+        }
+
         String applicationKey = args.get(0);
         String applicationObjString = stub.getStringState(applicationKey);
 
-        if (!applicationObjString.isEmpty()) {
-            return ResponseUtils.newSuccessResponse("Valid application.", "true".getBytes());
-        } else {
-            return ResponseUtils.newSuccessResponse("Invalid application.", "false".getBytes());
-        }
+        boolean isValid = (applicationObjString != null && !applicationObjString.isEmpty());
+        return ResponseUtils.newSuccessResponse(isValid ? "Valid application." : "Invalid application.", Boolean.toString(isValid).getBytes());
+    }
+
+    protected boolean isAuthorized(ClientIdentity identity) throws JSONException {
+        return ORGANIZATION.equals(identity.getMSPID());
     }
 
     public static void main(String[] args) {
-        logger.info("OpenSSL avaliable: " + OpenSsl.isAvailable());
+        logger.info("OpenSSL available: " + OpenSsl.isAvailable());
         new ApplicationChaincode().start(args);
     }
 }

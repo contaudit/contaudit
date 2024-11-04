@@ -10,4 +10,9 @@ public class Wrapper {
     public void setHash(String hash) {
         this.hash = hash;
     }
+
+    @Override
+    public String toString() {
+        return "Wrapper{hash=" + this.hash + "}";
+    }
 }

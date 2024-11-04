@@ -1,11 +1,11 @@
 ## ContAudIT Chaincodes
 
-Esse projeto é organizado em quatro pastas.
+This project is organized into four folders.
 
-- [**application-chaincode**](application-chaincode/) - Código do chaincode responsável por mannter as informações dos aplicativos usados pela organização auditada e que sejam acreditados/homologados pela auditoria.
+- [**application-chaincode**](application-chaincode/) - Chaincode code responsible for maintaining information about applications used by the audited organization and that are accredited/approved by the audit.
 
-- [**artifact-chaincode**](artifact-chaincode/) - Código do chaincode responsável por manter as informações dos artefatos usados pela organização auditada em seus aplicativos e que sejam acreditados/homologados pela auditoria.
+- [**artifact-chaincode**](artifact-chaincode/) - Chaincode code responsible for maintaining information about artifacts used by the audited organization in its applications and that are accredited/approved by the audit.
 
-- [**log-chaincode**](log-chaincode/) - Código do chaincode responsável por manter as informações de execução dos aplicativos usados pela organização auditada.
+- [**log-chaincode**](log-chaincode/) - Chaincode code responsible for maintaining the execution information of the applications used by the audited organization.
 
-- [**wrapper-chaincode**](wrapper-chaincode/) - Código do chaincode responsável por manter a assinatura válida do cliente Wrapper provido pela auditoria e usado pela organização auditada.
+- [**wrapper-chaincode**](wrapper-chaincode/) - Chaincode code responsible for maintaining the valid signature of the Wrapper client provided by the audit and used by the audited organization.

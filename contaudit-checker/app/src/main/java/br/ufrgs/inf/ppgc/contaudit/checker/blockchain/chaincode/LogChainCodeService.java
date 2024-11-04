@@ -4,11 +4,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-
 import br.ufrgs.inf.ppgc.contaudit.checker.blockchain.BlockchainService;
 import br.ufrgs.inf.ppgc.contaudit.checker.log.Log;
 

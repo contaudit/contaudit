@@ -4,22 +4,24 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import br.ufrgs.inf.ppgc.contaudit.wrapper.Utils;
 import br.ufrgs.inf.ppgc.contaudit.wrapper.security.HashService;
 
 public class EnvironmentService {
     private static final String STATE_DEF_FILE_SUFFIX = "_state_temp.txt";
-    
-    private Logger logger = LoggerFactory.getLogger(EnvironmentService.class);
+    protected Logger logger = LoggerFactory.getLogger(EnvironmentService.class);
+    protected HashService hashService;
+
+    public EnvironmentService(HashService hashService) {
+        this.hashService = hashService;
+    }
 
     public String checkStateHash(String stateName) throws InterruptedException, IOException {
         String currentState = this.getCurrentState();
         this.saveCurrentState(currentState, stateName);
-        String hash = new HashService().generateSHA3256Hash(currentState);
+        String hash = this.hashService.generateSHA3256Hash(currentState);
 
         String logString = String.format("Environment state hash: %s", hash);
         this.logger.info(logString);
@@ -34,18 +36,19 @@ public class EnvironmentService {
         return packageDiff;
     }
 
-    public void clearStates() throws IOException, InterruptedException {
+    public Boolean clearStates() throws IOException, InterruptedException {
         this.logger.info("Cleaning temporary files...");
         this.runCommand("rm -rf *" + STATE_DEF_FILE_SUFFIX);
+        return true;
     }
 
-    private void saveCurrentState(String currentState, String stateName) throws IOException {
+    protected Boolean saveCurrentState(String currentState, String stateName) throws IOException {
         this.logger.info("Saving current environment state...");
         this.createFile(currentState, stateName + STATE_DEF_FILE_SUFFIX);
+        return true;
     }
 
-    @java.lang.SuppressWarnings("java:S125")
-    private String getCurrentState() throws IOException, InterruptedException {
+    protected String getCurrentState() throws IOException, InterruptedException {
         this.logger.info("Analyzing current environment state...");
         // Define here the commands to collect environment state
         
@@ -58,13 +61,13 @@ public class EnvironmentService {
         return this.runCommand(command);
     }
 
-    private String getFilesDiff(String firstFileName, String secondFileName) throws IOException, InterruptedException {
+    protected String getFilesDiff(String firstFileName, String secondFileName) throws IOException, InterruptedException {
         this.logger.info("Checking environment diff...");
         return this.runCommand("diff "+ firstFileName + STATE_DEF_FILE_SUFFIX + " " + secondFileName + STATE_DEF_FILE_SUFFIX);
     } 
 
-    private String runCommand(String command) throws IOException, InterruptedException {
-        ProcessBuilder builder = new ProcessBuilder();
+    protected String runCommand(String command) throws IOException, InterruptedException {
+        ProcessBuilder builder = this.createProcessBuilder();
         builder.command("sh", "-c", command);
         Process process = builder.start();
         String output = Utils.transformInputStreamToString(process.getInputStream(), false);
@@ -72,9 +75,15 @@ public class EnvironmentService {
         return output;
     }
 
-    private void createFile(String fileContent, String fileName) throws IOException {
+    protected ProcessBuilder createProcessBuilder() {
+        return new ProcessBuilder();
+    }
+
+    protected Boolean createFile(String fileContent, String fileName) throws IOException {
         Path path = Paths.get(fileName);
         byte[] contentBytes = fileContent.getBytes();
         Files.write(path, contentBytes);
+
+        return true;
     }
 }
